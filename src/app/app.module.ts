@@ -9,7 +9,7 @@ import { PromotionComponent } from './promotion/promotion.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PromotionAdDetailsComponent
+    PromotionAdDetailsComponent,
     PromotionComponent
   ],
   imports: [
