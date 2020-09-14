@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Angular-Classifieds"
+    }
+  },
+  "defaultProject": "Angular-Classifieds",
+  "cli": {
+    "analytics": "bb707f1c-e0fc-4651-9e98-1f721ac6e8f2"
+  }
 }
