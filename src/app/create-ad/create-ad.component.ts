@@ -64,6 +64,8 @@ export class CreateAdComponent implements OnInit {
       this.hasImage = false;
       return;
     }
+    if (this.createAdForm.hasError) return;
+
     this.ad = this.createAdForm.value;
     console.log(this.AdService.createAd(this.ad));
   }
