@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { SubCategoryService } from '../services/sub-category.service';
 import { AdTypeService } from '../services/ad-type.service';
 import { CityService } from '../services/city.service';
@@ -13,9 +13,11 @@ import { AdService } from '../services/ad.service';
 })
 export class CreateAdComponent implements OnInit {
   ad: Ad;
-  minusInputs: Boolean;
   cities: Array<object>;
   types: Array<object>;
+  subCategories: Array<object>;
+  hasImage: Boolean;
+  invalidImage: Boolean;
   constructor(
     private SubCategoryService: SubCategoryService,
     private AdTypeService: AdTypeService,
@@ -23,18 +25,21 @@ export class CreateAdComponent implements OnInit {
     private AdService: AdService
   ) {
     this.ad = new Ad();
-    this.minusInputs = false;
+    this.hasImage = true;
+    this.invalidImage = false;
   }
   createAdForm = new FormGroup({
     name: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
-    images: new FormControl('', [Validators.required]),
+    images: new FormArray([], Validators.required),
+    subCategory: new FormControl('', Validators.required),
   });
   ngOnInit(): void {
-    this.cities = this.CityService.getCities();
     this.types = this.AdTypeService.getTypes();
+    this.cities = this.CityService.getCities();
+    this.subCategories = this.SubCategoryService.getSubCategories();
   }
   get name() {
     return this.createAdForm.get('name');
@@ -43,7 +48,7 @@ export class CreateAdComponent implements OnInit {
     return this.createAdForm.get('price');
   }
   get images() {
-    return this.createAdForm.get('images');
+    return this.createAdForm.get('images') as FormArray;
   }
   get city() {
     return this.createAdForm.get('city');
@@ -51,27 +56,31 @@ export class CreateAdComponent implements OnInit {
   get type() {
     return this.createAdForm.get('type');
   }
+  get subCategory() {
+    return this.createAdForm.get('subCategory');
+  }
   createAd() {
+    if (this.images.length == 0) {
+      this.hasImage = false;
+      return;
+    }
     this.ad = this.createAdForm.value;
     console.log(this.AdService.createAd(this.ad));
   }
-  addImage() {
-    let image = document.getElementById('imagesInputs');
-    let newInput = document.createElement('input');
-    image.innerHTML += `  <input
-    formControlName="images"
-    type="text"
-    id="images"
-    class="form-control"
-  />`;
-    this.minusInputs = true;
-  }
-  minusImage() {
-    let image = document.getElementById('imagesInputs');
-    image.removeChild(image.lastElementChild);
-    console.log(image);
-    if (image.children.length == 1) {
-      this.minusInputs = false;
+  addImage(image: HTMLInputElement) {
+    if (image.value.length < 10) {
+      this.invalidImage = true;
+      this.hasImage = true;
+      return;
     }
+
+    this.images.push(new FormControl(image.value));
+    image.value = '';
+    this.invalidImage = false;
+    this.hasImage = true;
+  }
+  removeImage(image: FormControl) {
+    let index = this.images.controls.indexOf(image);
+    this.images.removeAt(index);
   }
 }
