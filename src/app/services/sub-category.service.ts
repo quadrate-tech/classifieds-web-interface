@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SubCategoryService {
-  sub_categories = [
-    { id: 1, name: 'job' },
-    { id: 2, name: 'rent' },
-    { id: 3, name: 'sale' },
+  subCategories = [
+    { id: 1, name: 'books' },
+    { id: 2, name: 'furniture' },
+    { id: 3, name: 'doors' },
   ];
   adSubCategory: number;
   constructor() {
-    this.adSubCategory = this.sub_categories[0].id;
+    this.adSubCategory = this.subCategories[0].id;
   }
   getAdSubCategory() {
     return this.adSubCategory;
@@ -19,5 +19,7 @@ export class SubCategoryService {
   setAdSubCategory(subCategory) {
     this.adSubCategory = subCategory;
   }
-  getSubCategories(parentCategory) {}
+  getSubCategories() {
+    return this.subCategories;
+  }
 }
