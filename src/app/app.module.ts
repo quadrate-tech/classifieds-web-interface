@@ -17,10 +17,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { AdTypeComponent } from './ad-type/ad-type.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 import { CityService } from './services/city.service';
 import { AdTypeService } from './services/ad-type.service';
 import { SubCategoryService } from './services/sub-category.service';
+
 
 @NgModule({
   declarations: [
