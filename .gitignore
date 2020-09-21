@@ -45,3 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 /.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/.vs/classifieds-web-interface/v16/.suo
