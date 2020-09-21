@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { FormsModule } from '@angular/forms';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -14,6 +13,17 @@ import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateDistrictComponent } from './create-district/create-district.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
+import { PromotionComponent } from './promotion/promotion.component';
+import { CreateAdComponent } from './create-ad/create-ad.component';
+import { CityService } from './services/city.service';
+import { AdTypeService } from './services/ad-type.service';
+import { SubCategoryService } from './services/sub-category.service';
+
 
 @NgModule({
   declarations: [
@@ -36,4 +46,13 @@ import { CreateDistrictComponent } from './create-district/create-district.compo
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+    PromotionAdDetailsComponent,
+    PromotionComponent,
+    CreateAdComponent,
+  ],
+  imports: [FormsModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
+  providers: [CityService, AdTypeService, SubCategoryService],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
 
