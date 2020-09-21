@@ -17,7 +17,7 @@ import { SubCategoryService } from './services/sub-category.service';
     AppComponent,
     PromotionAdDetailsComponent,
     PromotionComponent,
-    AdTypeComponent
+    AdTypeComponent,
     CreateAdComponent,
   ],
   imports: [FormsModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
