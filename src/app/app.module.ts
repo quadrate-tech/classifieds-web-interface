@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { PromotionComponent } from './promotion/promotion.component';
@@ -17,8 +17,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
-
+import { CreateAdComponent } from './create-ad/create-ad.component';
+import { CityService } from './services/city.service';
+import { AdTypeService } from './services/ad-type.service';
+import { SubCategoryService } from './services/sub-category.service';
 
 @NgModule({
   declarations: [
@@ -44,5 +46,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   ],
   providers: [],
   bootstrap: [AppComponent]
+    CreateAdComponent,
+  ],
+  imports: [FormsModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
+  providers: [CityService, AdTypeService, SubCategoryService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
