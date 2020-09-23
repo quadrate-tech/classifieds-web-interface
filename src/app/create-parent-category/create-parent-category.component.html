@@ -1,0 +1,23 @@
+<form [formGroup]="createParentCategoryForm" (ngSubmit)="createCategory()">
+  <h1>Create Parent Category</h1>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" type="text" class="form-control" />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      Category must have a name
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input id="id" formControlName="id" type="number" class="form-control" />
+    <div *ngIf="id.touched && id.invalid" class="alert alert-danger">
+      Category must have an ID
+    </div>
+  </div>
+  <div *ngIf="!isUnique" class="alert alert-danger">
+    Category must have unique ID and unique Name
+  </div>
+  <button class="btn btn-primary">
+    Create Category
+  </button>
+</form>
