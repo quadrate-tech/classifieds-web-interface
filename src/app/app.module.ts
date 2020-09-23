@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { PromotionComponent } from './promotion/promotion.component';
+import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { UserComponent } from './user/user.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -20,7 +21,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AdTypeComponent } from './ad-type/ad-type.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { CreateAdComponent } from './create-ad/create-ad.component';
     PromotionComponent,
     UserComponent,
     CreateAdComponent,
-
+    SubCategoryComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import { CreateAdComponent } from './create-ad/create-ad.component';
     BrowserModule,
     AppRoutingModule
   ],
+  imports: [FormsModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
   providers: [CityService, AdTypeService, SubCategoryService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
