@@ -19,9 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AdTypeComponent } from './ad-type/ad-type.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
-import { CityService } from './services/city.service';
-import { AdTypeService } from './services/ad-type.service';
-import { SubCategoryService } from './services/sub-category.service';
 
 
 @NgModule({
@@ -29,7 +26,9 @@ import { SubCategoryService } from './services/sub-category.service';
     AppComponent,
     PromotionAdDetailsComponent,
     PromotionComponent,
-    UserComponent
+    UserComponent,
+    CreateAdComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +48,7 @@ import { SubCategoryService } from './services/sub-category.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CityService, AdTypeService, SubCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
