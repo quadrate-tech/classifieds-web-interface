@@ -5,13 +5,9 @@ import { UserComponent } from './user/user.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 
 const routes: Routes = [
-  {path:'',component:UserComponent},
-  {
-    path: 'me/subCategory',
-    component: SubCategoryComponent,
-    path: 'me/ad',   
-    component: CreateAdComponent,
-  },
+  {path: '', component: UserComponent},
+  {path: 'me/subCategory', component: SubCategoryComponent},
+  {path: 'me/ad', component: CreateAdComponent},
 ];
 
 @NgModule({
