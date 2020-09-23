@@ -1,0 +1,59 @@
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:center;">ADD DISTRICT</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Add your district">
+          <mat-card-content>
+            <form action="">
+              <mat-form-field>
+                <label>District Name</label>
+                <input
+                  matInput
+                  placeholder="............................................................................"
+                  required
+                  name="username"
+                  ngModel
+                  #username="ngModel">
+                <mat-icon matSuffix>room</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <label>District Code</label>
+                <input
+                  matInput
+                  placeholder="............................................................................"
+                  required
+                  name="email"
+                  ngModel
+                  #email="ngModel">
+                  <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <label>Province</label>
+                <input
+                  matInput
+                  placeholder="............................................................................"
+                  required
+                  minlength="6"
+                  name="password"
+                  ngModel
+                  #password="ngModel">
+                  <mat-icon matSuffix>room</mat-icon>
+
+              </mat-form-field>
+              
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button">
+                ADD DISTRICT
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
+  
+  
+  

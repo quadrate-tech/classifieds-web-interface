@@ -1,0 +1,34 @@
+<form [formGroup]="subCategoryForm" (ngSubmit)="createCategory()">
+  <h1>Create Sub-Category</h1>
+  <div class="form-group">
+    <label for="parent">Parent Category</label>
+    <select formControlName="parent" id="parent" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let parent of parents" [value]="parent.id">{{
+        parent.name
+      }}</option>
+    </select>
+
+    <div *ngIf="parent.touched && parent.invalid" class="alert alert-danger">
+      SubCategory must belong to a parent category
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" type="text" class="form-control" />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      Category must have a name
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input id="id" formControlName="id" type="number" class="form-control" />
+    <div *ngIf="id.touched && id.invalid" class="alert alert-danger">
+      Category must have an ID
+    </div>
+  </div>
+
+  <button class="btn btn-primary">
+    Create Category
+  </button>
+</form>

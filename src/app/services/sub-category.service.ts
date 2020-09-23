@@ -13,6 +13,12 @@ export class SubCategoryService {
   constructor() {
     this.adSubCategory = this.subCategories[0].id;
   }
+  
+  createSubCategory(subCategory) {
+    this.subCategories.push(subCategory);
+    console.log(this.subCategories);
+  }
+
   getAdSubCategory() {
     return this.adSubCategory;
   }

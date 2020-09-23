@@ -10,6 +10,11 @@ export class ParentCategoryService {
     { id: 3, name: 'doors' },
   ];
   constructor() {}
+
+  getParentCategories() {
+    return this.parentCategories;
+  }
+  
   checkUnique(category): Boolean {
     for (let i = 0; i < this.parentCategories.length; i++) {
       if (
