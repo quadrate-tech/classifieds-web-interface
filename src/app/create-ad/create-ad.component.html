@@ -1,0 +1,99 @@
+<form [formGroup]="createAdForm" (ngSubmit)="createAd()">
+  <h1>Create Your Ad</h1>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" id="name" type="text" class="form-control" />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      Ad must have a name
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <select formControlName="city" id="city" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let city of cities" [value]="city.id">{{
+        city.name
+      }}</option>
+    </select>
+
+    <div *ngIf="city.touched && city.invalid" class="alert alert-danger">
+      Ad must have a city
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <select formControlName="type" id="type" class="form-control">
+      <option *ngFor="let type of types" [value]="type.id">{{
+        type.name
+      }}</option>
+    </select>
+
+    <div *ngIf="type.touched && type.invalid" class="alert alert-danger">
+      Ad must have a type
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subCategory">subCategory</label>
+    <select formControlName="subCategory" id="subCategory" class="form-control">
+      <option
+        *ngFor="let subCategory of subCategories"
+        [value]="subCategory.id"
+        >{{ subCategory.name }}</option
+      >
+    </select>
+
+    <div
+      *ngIf="subCategory.touched && subCategory.invalid"
+      class="alert alert-danger"
+    >
+      Ad must have a subCategory
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      formControlName="price"
+      type="number"
+      id="price"
+      class="form-control"
+    />
+    <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
+      Ad must have a price
+    </div>
+  </div>
+
+  <div id="imagesGroup" class="form-group" style="width: 100%;">
+    <label for="images"
+      >Images <br />(click Enter to Add - Click on the url to remove it)</label
+    >
+    <input
+      formControlName="images"
+      type="text"
+      id="images"
+      class="form-control"
+      (keyup.enter)="addImage(image)"
+      #image
+    />
+    <ul class="list-group">
+      <li
+        (click)="removeImage(image)"
+        *ngFor="let image of images.controls"
+        class="list-group-item"
+      >
+        {{ image.value }}
+      </li>
+    </ul>
+    <div *ngIf="invalidImage" class="alert alert-danger">
+      Invalid Image Url
+    </div>
+    <div *ngIf="!hasImage" class="alert alert-danger">
+      Ad must have at least one image
+    </div>
+  </div>
+
+  <button class="btn btn-primary">
+    Create Ad
+  </button>
+</form>
