@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateDistrictComponent } from './create-district/create-district.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,8 +9,7 @@ import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { PromotionComponent } from './promotion/promotion.component';
 import {PaymentsModule} from './payments/payments.module';
-import {HttpClientModule} from '@angular/common/http'
-import {ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule} from '@angular/common/http';
 import { CreateParentCategoryComponent } from './create-parent-category/create-parent-category.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { UserComponent } from './user/user.component';
