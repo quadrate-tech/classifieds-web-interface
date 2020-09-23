@@ -31,6 +31,7 @@ import {SubCategoryService} from './services/sub-category.service';
 @NgModule({
   declarations: [
     AppComponent,
+    AdTypeComponent,
     CreateDistrictComponent,
     PromotionAdDetailsComponent,
     PromotionComponent,
