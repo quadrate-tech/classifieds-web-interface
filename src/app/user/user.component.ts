@@ -11,16 +11,16 @@ interface User {
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   users: User[] = [
     {value: 'admin-0', viewValue: 'Admin'},
     {value: 'manager-1', viewValue: 'Manager'},
     {value: 'user-2', viewValue: 'User'}
   ];
   hide = true;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 
 }

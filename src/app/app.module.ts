@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AdTypeComponent } from './ad-type/ad-type.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
+import {CityService} from './services/city.service';
+import {AdTypeService} from './services/ad-type.service';
+import {SubCategoryService} from './services/sub-category.service';
 
 @NgModule({
   declarations: [
@@ -47,9 +50,9 @@ import { CreateAdComponent } from './create-ad/create-ad.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule
   ],
-  imports: [FormsModule, ReactiveFormsModule, BrowserModule, AppRoutingModule],
   providers: [CityService, AdTypeService, SubCategoryService],
   bootstrap: [AppComponent],
 })
