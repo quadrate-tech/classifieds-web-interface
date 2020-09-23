@@ -1,0 +1,92 @@
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="sidebar">
+      <mat-card class="sidebar-card">Classifieds-web-interface</mat-card>
+      
+      
+      <p class="user">User Profile</p></mat-drawer>
+  
+    
+    <mat-drawer-content>
+  
+      <div fxLayoutAlign="center center" fxFlexFill  class="toolbar">
+        <mat-card fxFlex="50"> 
+          <mat-toolbar color="primary">
+            <h1 class="header">User Profile</h1>
+          </mat-toolbar>
+            <form >
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">User Name</mat-label>
+                  <input matInput placeholder="User name" required >
+                </mat-form-field>
+    
+                <mat-form-field appearance="fill" class="example-full-width" >
+                  <mat-label class="label" > Enter password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" required>
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+    
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">First Name</mat-label>
+                  <input matInput placeholder="First name" required >
+                </mat-form-field>
+    
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">Last Name</mat-label>
+                  <input matInput placeholder="Last Name"  required>
+                </mat-form-field>
+    
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">Address</mat-label>
+                  <input matInput placeholder="Address" required >
+                </mat-form-field>
+    
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">Contact</mat-label>
+                  <input matInput placeholder="Contact"  required>
+                </mat-form-field>
+    
+               
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label class="label">User Type</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let user of users" [value]="user.value">
+                      {{user.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field  class="example-full-width" appearance="fill">
+                  <mat-label class="label">JSON token</mat-label>
+                  <input matInput placeholder="JSON token" required >
+                </mat-form-field>
+    
+                <section class="example-section">
+                  <mat-checkbox class="example-margin">Is Deleted</mat-checkbox>
+                </section>
+    
+               
+                
+                
+     
+    
+                
+                
+                <button mat-raised-button type="submit" class="example-full-width" color="primary">Submit</button>
+              </form>
+              
+           
+            
+        </mat-card>
+    </div>
+  
+  
+  
+  
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+  
+  
