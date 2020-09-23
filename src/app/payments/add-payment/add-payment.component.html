@@ -1,0 +1,29 @@
+<h2>Add New Payment</h2>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> Your Data Successfully Saved.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<form [formGroup] ="addPayment" (ngSubmit)="collectPayment()">
+
+        <label for="Promoted_ad_id">Promoted Ad Id</label>
+        <input type="text" class="form-control" formControlName="promoted_ad_id" placeholder="Promoted Ad ID">
+
+        <label for="payment_time">payment Time</label>
+        <input type="time" class="form-control" formControlName="payment_time" placeholder="Payment Time">
+
+        <label for="paid_amount">Paid Amount</label>
+        <input type="text" class="form-control" formControlName="paid_amount" placeholder="Paid Amount">
+
+        <label for="payment_date">Payment Date</label>
+        <input type="date" formControlName="payment_date" class="form-control">
+
+        <label for="payment_status">Payment Status</label><br>
+        <input type="checkbox" formControlName="payment_status"><br>
+
+        <button type="submit" class="btn btn-primary col-6">Submit</button>
+        <button type="reset" class="btn btn-danger col-6">Cancel</button>
+
+</form>

@@ -1,0 +1,34 @@
+<h2>Edit Payment Form</h2>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> Your Record Successfully Updated.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<form [formGroup] ="editPayment" (ngSubmit)="collection()">
+    <div>
+        <label for="Promoted_ad_id">Promoted Ad Id</label>
+        <input type="text" class="form-control" formControlName="promoted_ad_id" placeholder="Promoted Ad ID">
+    </div>
+    <div>
+        <label for="payment_time">payment Time</label>
+        <input type="time" class="form-control" formControlName="payment_time" placeholder="Payment Time">
+    </div>
+    <div>
+        <label for="paid_amount">Paid Amount</label>
+        <input type="text" class="form-control" formControlName="paid_amount" placeholder="Paid Amount">
+    </div>
+    <div>
+        <label for="payment_date">Payment Date</label>
+        <input type="date" formControlName="payment_date" class="form-control">
+    </div>
+    <div>
+        <label for="payment_status">Payment Status</label><br>
+        <input type="checkbox" formControlName="payment_status"><br>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary col-6">Update</button>
+        <button type="reset" class="btn btn-danger col-6">Cancel</button>
+    </div>
+    
+</form>
