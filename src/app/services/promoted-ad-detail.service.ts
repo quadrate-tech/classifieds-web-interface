@@ -1,69 +1,67 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {PromotedAdDetails} from '../models/promoted-ad-details.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PromotedAdDetailService {
-  private projects: Project[] = [];
-  private projectUpdated = new Subject<Project[]>();
-  selectedProject: Project = new Project('', '', 0, '');
+  private promotedAdDetails: PromotedAdDetails[] = [];
+  private PromotedAdDetailsUpdated = new Subject<PromotedAdDetails[]>();
+  selectedPromotedAdDetails: PromotedAdDetails = new PromotedAdDetails(0, 0, 0, '', false);
 
-  private saveprojectUrl = 'http://localhost:3000/project/save';
-  private getprojectUrl = 'http://localhost:3000/project/get';
-  private deleteProjectUrl = 'http://localhost:3000/project/delete/';
-  private updateProjectUrl = 'http://localhost:3000/project/update/';
+  private promotedAdUrl = 'http://localhost:8000/api/promotedAd';
 
   constructor(private http: HttpClient,
               private router: Router) { }
 
-  getProjectsUpdateListner() {
-    return this.projectUpdated.asObservable();
+  public getPromotedAdUpdateListner(): Observable<PromotedAdDetails[]> {
+    return this.PromotedAdDetailsUpdated.asObservable();
   }
 
 
-  getProjects() {
-    this.http.get(this.getprojectUrl).subscribe(
+  public getPromotedAd(): PromotedAdDetails[] {
+    this.http.get(this.promotedAdUrl).subscribe(
       res => {
-        this.projects = res as Project[];
-        this.projectUpdated.next([...this.projects]);
+        this.promotedAdDetails = res as PromotedAdDetails[];
+        this.PromotedAdDetailsUpdated.next([...this.promotedAdDetails]);
       },
       err => console.log(err)
     );
-    return [...this.projects];
+    return [...this.promotedAdDetails];
   }
 
-  addProject(project: Project) {
-    this.projects.push(project);
-    this.http.post<any>(this.saveprojectUrl, project, {
+  public addPromotedAd(promotedAdDetails: PromotedAdDetails): void {
+    this.promotedAdDetails.push(promotedAdDetails);
+    this.http.post<any>(this.promotedAdUrl, promotedAdDetails, {
       headers: {'Content-Type': 'application/json'}
     }).subscribe(
       res => window.alert('project added successfully!'),
       err => console.log(err)
     );
-    this.projectUpdated.next([...this.projects]);
+    this.PromotedAdDetailsUpdated.next([...this.promotedAdDetails]);
   }
 
-  deleteProject(_id) {
-    this.http.delete<any>(this.deleteProjectUrl  + _id, ).subscribe(
+  public deletePromotedAd(_id): void {
+    this.http.delete<any>(this.promotedAdUrl  + _id, ).subscribe(
       res => {
-        this.getProjects();
-        this.router.navigate(['/project']);
+        this.getPromotedAd();
+        this.router.navigate(['/promotedAd']);
       },
       err => console.log(err)
     );
   }
 
-  updateProject(project: Project) {
-    console.log(project);
-    this.http.post<any>(this.updateProjectUrl + project._id, project)
+  public updatePromotedAd(promotedAdDetails: PromotedAdDetails): void {
+    console.log(promotedAdDetails);
+    this.http.post<any>(this.promotedAdUrl + promotedAdDetails.Pa_ad_id, promotedAdDetails)
       .subscribe(
         res => {
           window.alert('project updated successfully');
-          this.getProjects();
+          this.getPromotedAd();
         },
         err => console.log(err)
       );
