@@ -9,22 +9,13 @@ import { UserComponent } from './user/user.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 
 const routes: Routes = [
-  {
-    component: AddPaymentComponent,
-    path:'add'
-  },
-  {
-    component: ListPaymentComponent,
-    path:'list'
-  },
-  {
-    component: EditPaymentComponent,
-    path:'edit/:id'
-  },
+  {component: AddPaymentComponent, path: 'payment/add' },
+  {component: ListPaymentComponent, path: 'payment/list'},
+  {component: EditPaymentComponent, path: 'payment/edit/:id'},
   {path: '', component: UserComponent},
   {path: 'me/subCategory', component: SubCategoryComponent},
   {path: 'me/ad', component: CreateAdComponent},
-  {path: 'me/parentCategory',component: CreateParentCategoryComponent},
+  {path: 'me/parentCategory', component: CreateParentCategoryComponent},
 ];
 
 @NgModule({
