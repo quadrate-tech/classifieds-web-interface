@@ -28,9 +28,7 @@ import { CreateAdComponent } from './create-ad/create-ad.component';
 import {CityService} from './services/city.service';
 import {AdTypeService} from './services/ad-type.service';
 import {SubCategoryService} from './services/sub-category.service';
-import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
-import { EditPromotionComponent } from './promotion/edit-promotion/edit-promotion.component';
-import { ListPromotionComponent } from './promotion/list-promotion/list-promotion.component';
+import {PromotionModule} from './promotion/promotion.module';
 
 @NgModule({
   declarations: [
@@ -43,14 +41,12 @@ import { ListPromotionComponent } from './promotion/list-promotion/list-promotio
     CreateAdComponent,
     SubCategoryComponent,
     UserComponent,
-    AddPromotionComponent,
-    EditPromotionComponent,
-    ListPromotionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PaymentsModule,
+    PromotionModule,
     HttpClientModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
