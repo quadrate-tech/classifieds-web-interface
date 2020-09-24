@@ -19,17 +19,17 @@ export class PromotionService {
     return this.http.post(this.url, data);
   }
 
-  deletePayment(id)
+  deletePromotion(id)
   {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  getCurrentPayment(id)
+  getCurrentPromotion(id)
   {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  updatePayment(id, data)
+  updatePromotion(id, data)
   {
     return this.http.put(`${this.url}/${id}`, data);
   }
