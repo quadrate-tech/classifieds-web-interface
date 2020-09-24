@@ -1,1 +1,35 @@
-<p>promotion-ad-details-edit works!</p>
+<div class="container">
+  <div class="font-weight-bold h5 p-5">{{type}} Promoted Ad Details</div>
+
+  <form>
+    <div class="form-group">
+      <label for="pa_ad_id">pa_ad_id</label>
+      <input type="number" class="form-control" id="pa_ad_id" name="name" [(ngModel)]="promotedAdDetails.Pa_ad_id" required>
+    </div>
+    <div class="form-group">
+      <label for="ad_id">Advertisement Id</label>
+      <input type="number" class="form-control" id="ad_id" name="name" [(ngModel)]="promotedAdDetails.ad_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="promotion_id">Promotion Id</label>
+      <input type="number" class="form-control" id="promotion_id" name="name" [(ngModel)]="promotedAdDetails.promotion_id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="starting_date">Starting Date</label>
+      <input type="string" class="form-control" id="starting_date" name="name" [(ngModel)]="promotedAdDetails.starting_date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="boolean" class="form-control" id="status" name="name" [(ngModel)]="promotedAdDetails.status" required>
+    </div>
+
+
+    <div class="form-group">
+      <button class="form-group btn btn-success" type="submit" (click)="onAdd()">{{type}} Promoted Ad</button>
+      <a class="btn btn-danger form-group ml-3" routerLink="/promotedAd" >Cancel</a>
+    </div>
+  </form>
+</div>

@@ -11,7 +11,6 @@ import {AddPromotionComponent} from './promotion/add-promotion/add-promotion.com
 import {ListPromotionComponent} from './promotion/list-promotion/list-promotion.component';
 import {EditPromotionComponent} from './promotion/edit-promotion/edit-promotion.component';
 import {PromotionAdDetailsEditComponent} from './promotion-ad-details/promotion-ad-details-edit/promotion-ad-details-edit.component';
-import {PromotedAdDetailComponent} from './promotion-ad-details/promoted-ad-detail/promoted-ad-detail.component';
 import {PromotionAdDetailsComponent} from './promotion-ad-details/promotion-ad-details.component';
 
 

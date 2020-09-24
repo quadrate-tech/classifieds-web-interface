@@ -11,7 +11,7 @@ import {PromotedAdDetails} from '../models/promoted-ad-details.model';
 export class PromotedAdDetailService {
   private promotedAdDetails: PromotedAdDetails[] = [];
   private PromotedAdDetailsUpdated = new Subject<PromotedAdDetails[]>();
-  selectedPromotedAdDetails: PromotedAdDetails = new PromotedAdDetails(0, 0, 0, '', false);
+  selectedPromotedAdDetails: PromotedAdDetails = new PromotedAdDetails(0, 0, 0, '00/00/0000', false);
 
   private promotedAdUrl = 'http://localhost:8000/api/promotedAd';
 
