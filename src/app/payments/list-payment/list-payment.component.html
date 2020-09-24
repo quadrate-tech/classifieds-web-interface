@@ -21,7 +21,7 @@
         <td>{{item.payment_status}}</td>
         <td>
             <i (click)="deletePayment(item.id)" class="fa fa-trash danger" style="color: red;"></i>
-            <a routerLink="/edit/{{item.id}}">
+            <a routerLink="payment/edit/{{item.id}}">
               <i  class="fa fa-edit primary" style="color: blue;"></i>
             </a>
         </td>

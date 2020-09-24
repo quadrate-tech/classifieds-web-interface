@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PromotionService} from '../promotion.service';
 
 @Component({
   selector: 'app-list-promotion',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPromotionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private promotionService: PromotionService) {}
+  promotionList: any = [];
 
   ngOnInit(): void {
+    this.promotionService.getList().subscribe((result) => {
+      this.promotionList = result;
+    });
   }
+
+  deletePromotion(item) {
+    this.promotionList.splice(item - 1, 1);
+    this.promotionService.deletePromotion(item).subscribe((result) => {
+    });
+  }
+
 
 }

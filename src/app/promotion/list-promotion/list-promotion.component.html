@@ -1,1 +1,29 @@
-<p>list-promotion works!</p>
+<h2>Promotion List</h2>
+<table class="table text-center">
+  <thead>
+  <tr>
+    <th scope="col">Promotion ID</th>
+    <th scope="col">Promotion Name</th>
+    <th scope="col">Promotion Cost</th>
+    <th scope="col">Promotion Duration</th>
+    <th scope="col">Promotion Status</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of promotionList">
+    <th scope="row">{{item.id}}</th>
+    <td>{{item.promotion_id}}</td>
+    <td>{{item.promotion_name}}</td>
+    <td>{{item.promotion_cost}}</td>
+    <td>{{item.duration}}</td>
+    <td>{{item.promotion_status}}</td>
+    <td>
+      <i (click)="deletePromotion(item.id)" class="fa fa-trash danger" style="color: red;"></i>
+      <a routerLink="promotion/edit/{{item.id}}">
+        <i  class="fa fa-edit primary" style="color: blue;"></i>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
