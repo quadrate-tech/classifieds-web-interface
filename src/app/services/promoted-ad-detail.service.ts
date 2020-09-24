@@ -55,6 +55,10 @@ export class PromotedAdDetailService {
     );
   }
 
+  public selected(_id): void {
+    this.selectedPromotedAdDetails = this.promotedAdDetails.find(_id);
+  }
+
   public updatePromotedAd(promotedAdDetails: PromotedAdDetails): void {
     console.log(promotedAdDetails);
     this.http.post<any>(this.promotedAdUrl + promotedAdDetails.Pa_ad_id, promotedAdDetails)

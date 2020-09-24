@@ -19,6 +19,7 @@ export class PromotionAdDetailsEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       if (this.promotedAdDetailService.selectedPromotedAdDetails.Pa_ad_id === Number(params.get('id'))) {
+        this.promotedAdDetailService.selected(Number(params.get('id')));
         this.promotedAdDetails = this.promotedAdDetailService.selectedPromotedAdDetails;
         this.type = 'Edit';
       }
