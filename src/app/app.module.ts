@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
-import { PromotionComponent } from './promotion/promotion.component';
 import {PaymentsModule} from './payments/payments.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateParentCategoryComponent } from './create-parent-category/create-parent-category.component';
@@ -29,6 +28,9 @@ import { CreateAdComponent } from './create-ad/create-ad.component';
 import {CityService} from './services/city.service';
 import {AdTypeService} from './services/ad-type.service';
 import {SubCategoryService} from './services/sub-category.service';
+import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
+import { EditPromotionComponent } from './promotion/edit-promotion/edit-promotion.component';
+import { ListPromotionComponent } from './promotion/list-promotion/list-promotion.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +38,14 @@ import {SubCategoryService} from './services/sub-category.service';
     AdTypeComponent,
     CreateDistrictComponent,
     PromotionAdDetailsComponent,
-    PromotionComponent,
     CreateParentCategoryComponent,
     UserComponent,
     CreateAdComponent,
     SubCategoryComponent,
     UserComponent,
+    AddPromotionComponent,
+    EditPromotionComponent,
+    ListPromotionComponent,
   ],
   imports: [
     BrowserModule,
