@@ -7,11 +7,17 @@ import { CreateParentCategoryComponent } from './create-parent-category/create-p
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { UserComponent } from './user/user.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
+import {AddPromotionComponent} from './promotion/add-promotion/add-promotion.component';
+import {ListPromotionComponent} from './promotion/list-promotion/list-promotion.component';
+import {EditPromotionComponent} from './promotion/edit-promotion/edit-promotion.component';
 
 const routes: Routes = [
   {component: AddPaymentComponent, path: 'payment/add' },
   {component: ListPaymentComponent, path: 'payment/list'},
   {component: EditPaymentComponent, path: 'payment/edit/:id'},
+  {component: AddPromotionComponent, path: 'promotion/add'},
+  {component: ListPromotionComponent, path: 'promotion/list'},
+  {component: EditPromotionComponent, path: 'promotion/edit/:id'},
   {path: '', component: UserComponent},
   {path: 'me/subCategory', component: SubCategoryComponent},
   {path: 'me/ad', component: CreateAdComponent},
