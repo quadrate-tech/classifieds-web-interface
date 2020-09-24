@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class PromotionService {
-  url = 'http://localhost:3000/promotion';
+  url = 'http://127.0.0.1:8000/api/promotion';
 
   constructor(private http: HttpClient) { }
 
