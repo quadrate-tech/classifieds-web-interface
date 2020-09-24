@@ -30,6 +30,7 @@ import {AdTypeService} from './services/ad-type.service';
 import {SubCategoryService} from './services/sub-category.service';
 import {PromotionModule} from './promotion/promotion.module';
 import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotion-ad-details-edit/promotion-ad-details-edit.component';
+import { PromotedAdDetailComponent } from './promotion-ad-details/promoted-ad-detail/promoted-ad-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotio
     SubCategoryComponent,
     UserComponent,
     PromotionAdDetailsEditComponent,
+    PromotedAdDetailComponent,
   ],
   imports: [
     BrowserModule,
