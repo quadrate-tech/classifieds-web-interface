@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateDistrictComponent } from './create-district/create-district.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
-import {PaymentsModule} from './payments/payments.module';
-import {HttpClientModule} from '@angular/common/http';
+import { PaymentsModule } from './payments/payments.module';
+import { HttpClientModule } from '@angular/common/http';
 import { CreateParentCategoryComponent } from './create-parent-category/create-parent-category.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { UserComponent } from './user/user.component';
@@ -25,11 +25,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AdTypeComponent } from './ad-type/ad-type.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
-import {CityService} from './services/city.service';
-import {AdTypeService} from './services/ad-type.service';
-import {SubCategoryService} from './services/sub-category.service';
-import {PromotionModule} from './promotion/promotion.module';
+import { CityService } from './services/city.service';
+import { AdTypeService } from './services/ad-type.service';
+import { SubCategoryService } from './services/sub-category.service';
+import { PromotionModule } from './promotion/promotion.module';
 import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotion-ad-details-edit/promotion-ad-details-edit.component';
+import { HomeModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotio
     PromotionAdDetailsEditComponent,
   ],
   imports: [
+    HomeModule,
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     PaymentsModule,
     PromotionModule,
@@ -73,4 +77,3 @@ import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotio
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
