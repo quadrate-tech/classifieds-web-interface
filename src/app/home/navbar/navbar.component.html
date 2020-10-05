@@ -6,11 +6,27 @@
   >
     <i class="fa fa-home"></i> Home
   </a>
-  <a  [routerLink]="['/login']"
-  routerLinkActive="active" class="nav-item nav-link"> <i class="fa fa-user"></i> Login </a>
-  <a     [routerLink]="['/register']"
-  routerLinkActive="active" class="nav-item nav-link">
+  <a
+    *ngIf="!isLogged"
+    [routerLink]="['/login']"
+    routerLinkActive="active"
+    class="nav-item nav-link"
+  >
+    <i class="fa fa-user"></i> Login
+  </a>
+  <a
+    *ngIf="!isLogged"
+    [routerLink]="['/register']"
+    routerLinkActive="active"
+    class="nav-item nav-link"
+  >
     <i class="fa fa-user-plus"></i> Register
+  </a>
+  <a *ngIf="isLogged" class="nav-item nav-link" href="#">
+    <i class="fa fa-user"></i> Profile
+  </a>
+  <a *ngIf="isLogged" class="nav-item nav-link" href="#">
+    <i class="fa fa-plus-square"></i> Ad Post
   </a>
   <a href="#" class="nav-item nav-link">
     <i class="fa fa-shopping-cart"></i> Shop
@@ -23,10 +39,15 @@
   >
     <i class="fa fa-users"></i> About Us
   </a>
-  <a href="#" class="nav-item nav-link"
-  [routerLink]="['/contact']"
-  routerLinkActive="active"
+  <a
+    href="#"
+    class="nav-item nav-link"
+    [routerLink]="['/contact']"
+    routerLinkActive="active"
   >
     <i class="fa fa-inbox"></i> Contact Us
+  </a>
+  <a href="#" class="nav-item nav-link" *ngIf="!isLogged">
+    <i class="fa fa-columns"></i> Dashboard
   </a>
 </nav>

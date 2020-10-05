@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   constructor() {}
-
-  ngOnInit(): void {}
+  isLogged: boolean;
+  ngOnInit(): void {
+    this.isLogged = false; //should call auth service isLogges function
+  }
   setActive(e) {
     console.log(e);
     let anchors = document.getElementsByTagName('a');
