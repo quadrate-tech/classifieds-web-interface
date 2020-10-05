@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { HomeWelcomeComponent } from './home-welcome/home-welcome.component';
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     AboutComponent,
     HomeWelcomeComponent,
+    RegisterComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [

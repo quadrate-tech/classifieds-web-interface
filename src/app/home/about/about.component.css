@@ -4,7 +4,7 @@
   min-width: 100%;
   min-height: 90%;
   border-radius: 20px;
-  word-break: break-all;
+  word-break: keep-all;
   margin-top: 10px;
   padding: 0;
 }
@@ -38,13 +38,13 @@
   line-height: 30px;
   word-spacing: 5px;
   font-weight: 400px;
-  word-break: break-all;
+  word-break: keep-all;
   font-size: 2rem;
 }
 .content-main h4 {
   line-height: 30px;
   word-spacing: 3px;
-  word-break: break-all;
+  word-break: keep-all;
   font-weight: 20px;
   font-size: 1rem;
 }

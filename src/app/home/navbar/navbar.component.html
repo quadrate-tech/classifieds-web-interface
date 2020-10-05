@@ -1,14 +1,15 @@
 <nav class="nav nav-tabs justify-content-end" (click)="setActive($event)">
   <a
-    href="#"
     class="nav-item nav-link"
     [routerLink]="['/home']"
     routerLinkActive="active"
   >
     <i class="fa fa-home"></i> Home
   </a>
-  <a href="#" class="nav-item nav-link"> <i class="fa fa-user"></i> Login </a>
-  <a href="#" class="nav-item nav-link">
+  <a  [routerLink]="['/login']"
+  routerLinkActive="active" class="nav-item nav-link"> <i class="fa fa-user"></i> Login </a>
+  <a     [routerLink]="['/register']"
+  routerLinkActive="active" class="nav-item nav-link">
     <i class="fa fa-user-plus"></i> Register
   </a>
   <a href="#" class="nav-item nav-link">
@@ -22,7 +23,10 @@
   >
     <i class="fa fa-users"></i> About Us
   </a>
-  <a href="#" class="nav-item nav-link">
+  <a href="#" class="nav-item nav-link"
+  [routerLink]="['/contact']"
+  routerLinkActive="active"
+  >
     <i class="fa fa-inbox"></i> Contact Us
   </a>
 </nav>

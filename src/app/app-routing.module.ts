@@ -14,6 +14,9 @@ import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotio
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { HomeWelcomeComponent } from './home/home-welcome/home-welcome.component';
 import { AboutComponent } from './home/about/about.component';
+import { LoginComponent } from './home/login/login.component';
+import { RegisterComponent } from './home/register/register.component';
+import { ContactComponent } from './home/contact/contact.component';
 
 const routes: Routes = [
   { component: AddPaymentComponent, path: 'payment/add' },
@@ -27,6 +30,9 @@ const routes: Routes = [
   { component: PromotionAdDetailsEditComponent, path: 'promotedAd/edit/:id' },
   { path: 'home', component: HomeWelcomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'contact', component: ContactComponent },
   // { path: '', component: UserComponent },
   { path: 'me/subCategory', component: SubCategoryComponent },
   { path: 'me/ad', component: CreateAdComponent },
