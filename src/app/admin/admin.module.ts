@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { ManageDistrictsComponent } from './manage-districts/manage-districts.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ManageAdApprovalsComponent } from './manage-ad-approvals/manage-ad-approvals.component';
+import { UserModule } from '../user/user.module';
 import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
@@ -16,21 +21,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdModule } from '../ad/ad.module';
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { ListUsersComponent } from './list-users/list-users.component';
 @NgModule({
   declarations: [
-    UserProfileComponent,
-    AddUserComponent,
-    EditUserComponent,
-    ListUsersComponent,
+    DashboardComponent,
+    ManageUsersComponent,
+    ManageDistrictsComponent,
+    ManageCategoriesComponent,
+    ManageAdApprovalsComponent,
   ],
   imports: [
-    AdModule,
     CommonModule,
+    UserModule,
     NoopAnimationsModule,
     FlexLayoutModule,
     MatFormFieldModule,
@@ -41,18 +42,17 @@ import { ListUsersComponent } from './list-users/list-users.component';
     MatCheckboxModule,
     MatSelectModule,
     MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatSidenavModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatFormFieldModule,
   ],
   exports: [
-    UserProfileComponent,
-    AddUserComponent,
-    EditUserComponent,
-    ListUsersComponent,
+    DashboardComponent,
+    ManageUsersComponent,
+    ManageDistrictsComponent,
+    ManageCategoriesComponent,
+    ManageAdApprovalsComponent,
   ],
 })
-export class UserModule {}
+export class AdminModule {}

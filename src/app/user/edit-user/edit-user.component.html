@@ -1,0 +1,63 @@
+<h2>Edit User</h2>
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success!</strong> Your Record Successfully Updated.
+  <button
+    (click)="closeAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="editUser" (ngSubmit)="collection()">
+  <div>
+    <label for="user_id">User Id</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="user_id"
+      placeholder="User Id"
+    />
+  </div>
+  <div>
+    <label for="join_time">Join Time</label>
+    <input
+      type="time"
+      class="form-control"
+      formControlName="join_time"
+      placeholder="join time"
+    />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      formControlName="email"
+      placeholder="Email"
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" class="form-control" />
+  </div>
+  <div>
+    <label for="username">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="username"
+      placeholder="Username"
+    />
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary col-6">Update</button>
+    <button type="reset" class="btn btn-danger col-6">Cancel</button>
+  </div>
+</form>

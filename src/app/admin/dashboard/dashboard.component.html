@@ -1,0 +1,18 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened class="sidebar">
+    <mat-card class="sidebar-card">Classifieds-web-interface</mat-card>
+
+    <button class="side-btns btn btn-primary">manage users</button>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div fxLayoutAlign="center center" fxFlexFill class="toolbar">
+      <mat-card fxFlexFill>
+        <mat-toolbar color="primary">
+          <h1 class="header">Dashboard</h1>
+        </mat-toolbar>
+        <app-manage-users class="items"></app-manage-users>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -3,12 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddPaymentComponent } from './payments/add-payment/add-payment.component';
 import { ListPaymentComponent } from './payments/list-payment/list-payment.component';
 import { EditPaymentComponent } from './payments/edit-payment/edit-payment.component';
-import { CreateParentCategoryComponent } from './categories/create-parent-category/create-parent-category.component';
-import { SubCategoryComponent } from './categories/sub-category/sub-category.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { CreateAdComponent } from './ad/create-ad/create-ad.component';
 import { ListAdComponent } from './ad/list-ad/list-ad.component';
-
 import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
 import { ListPromotionComponent } from './promotion/list-promotion/list-promotion.component';
 import { EditPromotionComponent } from './promotion/edit-promotion/edit-promotion.component';
@@ -20,8 +17,13 @@ import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { ShopComponent } from './home/shop/shop.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { ListUsersComponent } from './user/list-users/list-users.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 const routes: Routes = [
+  { component: DashboardComponent, path: 'admin' },
   { component: AddPaymentComponent, path: 'payment/add' },
   { component: ListPaymentComponent, path: 'payment/list' },
   { component: EditPaymentComponent, path: 'payment/edit/:id' },
@@ -31,15 +33,18 @@ const routes: Routes = [
   { component: PromotionAdDetailsComponent, path: 'promotedAd' },
   { component: PromotionAdDetailsEditComponent, path: 'promotedAd/add' },
   { component: PromotionAdDetailsEditComponent, path: 'promotedAd/edit/:id' },
+  { component: AddUserComponent, path: 'users/add' },
+  { component: ListUsersComponent, path: 'users/list' },
+  { component: EditUserComponent, path: 'users/edit/:id' },
   { component: ListAdComponent, path: 'ads/:id' },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopComponent },
-  { path: 'me/subCategory', component: SubCategoryComponent },
+  // { path: 'me/subCategory', component: SubCategoryComponent },
   { path: 'ad/create', component: CreateAdComponent },
-  { path: 'me/parentCategory', component: CreateParentCategoryComponent },
+  // { path: 'me/parentCategory', component: CreateParentCategoryComponent },
   { path: 'me', component: UserProfileComponent },
   { path: 'home', component: HomeWelcomeComponent },
 ];

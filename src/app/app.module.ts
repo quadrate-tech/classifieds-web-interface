@@ -31,6 +31,7 @@ import { HomeModule } from './home/home.module';
 import { AdModule } from './ad/ad.module';
 import { DistrictsModule } from './districts/districts.module';
 import { CategoriesModule } from './categories/categories.module';
+import { AdminModule } from './admin/admin.module';
 
 import { RouterModule } from '@angular/router';
 
@@ -41,6 +42,7 @@ import { RouterModule } from '@angular/router';
     PromotionAdDetailsEditComponent,
   ],
   imports: [
+    AdminModule,
     UserModule,
     HomeModule,
     DistrictsModule,
