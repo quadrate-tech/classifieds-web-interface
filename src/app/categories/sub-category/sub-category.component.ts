@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, Form } from '@angular/forms';
-import { ParentCategoryService } from '../services/parent-category.service';
-import { SubCategoryService } from '../services/sub-category.service';
+import { ParentCategoryService } from '../../services/parent-category.service';
+import { SubCategoryService } from '../../services/sub-category.service';
 
 @Component({
   selector: 'app-sub-category',

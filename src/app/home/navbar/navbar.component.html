@@ -1,4 +1,7 @@
-<nav class="nav nav-tabs justify-content-end" (click)="setActive($event)">
+<nav
+  class="main-nav nav nav-tabs justify-content-end"
+  (click)="setActive($event)"
+>
   <a
     class="nav-item nav-link"
     [routerLink]="['/home']"
@@ -28,11 +31,14 @@
   <a *ngIf="isLogged" class="nav-item nav-link" href="#">
     <i class="fa fa-plus-square"></i> Ad Post
   </a>
-  <a href="#" class="nav-item nav-link">
+  <a
+    class="nav-item nav-link"
+    [routerLink]="['/shop']"
+    routerLinkActive="active"
+  >
     <i class="fa fa-shopping-cart"></i> Shop
   </a>
   <a
-    href="#"
     class="nav-item nav-link"
     [routerLink]="['/about']"
     routerLinkActive="active"

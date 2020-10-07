@@ -9,14 +9,14 @@ h1 {
 form {
   position: relative;
   max-width: 100%;
-  background-image: url("../../assets/bck.svg");
+  background-image: url("../../../assets/bck.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
   padding: 20px;
   border: 2px solid grey;
   box-shadow: grey;
-  height: 800px;
+  height: 1000px;
 }
 form div.form-group,
 form button {

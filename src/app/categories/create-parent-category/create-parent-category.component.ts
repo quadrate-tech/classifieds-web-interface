@@ -6,7 +6,7 @@ import {
   FormArray,
   Form,
 } from '@angular/forms';
-import { ParentCategoryService } from '../services/parent-category.service';
+import { ParentCategoryService } from '../../services/parent-category.service';
 
 @Component({
   selector: 'app-create-parent-category',

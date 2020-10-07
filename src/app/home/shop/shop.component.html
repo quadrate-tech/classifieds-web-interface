@@ -1,0 +1,80 @@
+<div class="container-all">
+  <div class="text-shop-div">
+    <h1>Welcome to The Shop!</h1>
+    <h2>Get The Item Before It Gone!</h2>
+  </div>
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h1>Filters</h1>
+    <form>
+      <div class="side-div range">
+        <h2>
+          Multi Range
+        </h2>
+
+        <div *ngFor="let range of ranges" class="checkbox">
+          <label><input type="checkbox" value="" />{{ range }}</label>
+        </div>
+      </div>
+      <div class="side-div price">
+        <h2>
+          slider
+        </h2>
+        <section id="slider" class="range-slider">
+          <span class="rangeValues"></span>
+          <input value="5" min="0" max="15" step="0.5" type="range" />
+          <input value="10" min="0" max="15" step="0.5" type="range" />
+        </section>
+      </div>
+      <div class="side-div category">
+        <h2>
+          Category
+        </h2>
+
+        <div *ngFor="let category of categories" class="checkbox">
+          <label
+            ><input type="checkbox" value="" />{{ category.name }}
+            <span>{{ category.number }}</span></label
+          >
+        </div>
+      </div>
+    </form>
+  </nav>
+  <!-- Page Content -->
+  <div id="content">
+    <!-- Search form -->
+    <form
+      class="search form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2"
+    >
+      <input
+        class="form-control form-control-sm mr-3 w-75"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </form>
+    <div class="container">
+      <!--Row with three equal columns-->
+      <div class="row">
+        <div class="ad col-lg-4" *ngFor="let id of ids">
+          <app-list-ad [scale]="0.5" [width]="30" [height]="30" [adId]="id">
+          </app-list-ad>
+        </div>
+      </div>
+    </div>
+    <nav class="page-nav">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a href="#" class="page-link" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item active"><a href="#" class="page-link">1</a></li>
+        <li class="page-item"><a href="#" class="page-link">2</a></li>
+        <li class="page-item"><a href="#" class="page-link">3</a></li>
+        <li class="page-item"><a href="#" class="page-link">4</a></li>
+        <li class="page-item"><a href="#" class="page-link">5</a></li>
+        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

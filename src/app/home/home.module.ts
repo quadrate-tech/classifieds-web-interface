@@ -7,7 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { HomeWelcomeComponent } from './home-welcome/home-welcome.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
-
+import { ShopComponent } from './shop/shop.component';
+import { AdModule } from '../ad/ad.module';
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -16,8 +17,9 @@ import { RegisterComponent } from './register/register.component';
     AboutComponent,
     HomeWelcomeComponent,
     RegisterComponent,
+    ShopComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AdModule],
   exports: [
     NavbarComponent,
     ContactComponent,

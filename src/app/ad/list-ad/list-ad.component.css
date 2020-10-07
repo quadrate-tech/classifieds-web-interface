@@ -1,0 +1,58 @@
+.card {
+  width: inherit;
+  border-radius: 20px;
+}
+.card-img-overlay {
+  color: white;
+  background-color: #0f1642;
+  z-index: 1;
+  border-radius: 20px;
+}
+.text-price {
+  float: right;
+  margin-right: 10px;
+}
+button i {
+  margin-right: 10px;
+}
+.text-div {
+  font-size: 0.8rem;
+  font-weight: 400px;
+  line-height: 0px;
+  margin: 15px 3px 10px 3px;
+  z-index: 2;
+  position: relative;
+  top: 80%;
+}
+.name,
+.by {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+img,
+.btns {
+  z-index: 2;
+}
+img {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px;
+}
+.btns {
+  width: 100%;
+  height: 20%;
+}
+button {
+  width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid black;
+}
+.wish {
+  background-color: #b8c2cc;
+  color: black;
+}
+.buy {
+  background-color: #6f64f8;
+  color: white;
+}

@@ -9,7 +9,7 @@ export class Ad {
   is_ad_promoted: Boolean;
   promotion_duration: Boolean;
   ad_posted_date: Date;
-  ad_posted_by: number; //this.user.id;
+  ad_posted_by: string; //this.user.id;
   city: number; //get all cities
   ad_category: number; //get all sub categories of a parent category
 }

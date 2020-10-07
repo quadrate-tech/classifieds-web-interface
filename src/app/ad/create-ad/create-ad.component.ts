@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { SubCategoryService } from '../services/sub-category.service';
-import { AdTypeService } from '../services/ad-type.service';
-import { CityService } from '../services/city.service'
-import { Ad } from '../models/ad';
-import { AdService } from '../services/ad.service';
+import { SubCategoryService } from '../../services/sub-category.service';
+import { AdTypeService } from '../../services/ad-type.service';
+import { CityService } from '../../services/city.service';
+import { Ad } from '../../models/ad';
+import { AdService } from '../../services/ad.service';
 @Component({
   selector: 'app-create-ad',
   templateUrl: './create-ad.component.html',
