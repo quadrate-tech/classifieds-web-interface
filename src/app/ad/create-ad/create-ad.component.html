@@ -1,5 +1,7 @@
 <form [formGroup]="createAdForm" (ngSubmit)="createAd()">
-  <h1>Create Your Ad</h1>
+  <div class="ad-title">
+    <h1>Create Ad</h1>
+  </div>
   <div class="form-group">
     <label for="name">Name</label>
     <input formControlName="name" id="name" type="text" class="form-control" />
@@ -63,36 +65,12 @@
       Ad must have a price
     </div>
   </div>
-
-  <div id="imagesGroup" class="form-group" style="width: 100%;">
-    <label for="images"
-      >Images <br />(click Enter to Add - Click on the url to remove it)</label
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile" multiple />
+    <label class="custom-file-label" id="inputLabel" for="customFile"
+      >Choose Images</label
     >
-    <input
-      formControlName="images"
-      type="text"
-      id="images"
-      class="form-control"
-      (keyup.enter)="addImage(image)"
-      #image
-    />
-    <ul class="list-group">
-      <li
-        (click)="removeImage(image)"
-        *ngFor="let image of images.controls"
-        class="list-group-item"
-      >
-        {{ image.value }}
-      </li>
-    </ul>
-    <div *ngIf="invalidImage" class="alert alert-danger">
-      Invalid Image Url
-    </div>
-    <div *ngIf="!hasImage" class="alert alert-danger">
-      Ad must have at least one image
-    </div>
   </div>
-
   <button class="btn btn-primary">
     Create Ad
   </button>

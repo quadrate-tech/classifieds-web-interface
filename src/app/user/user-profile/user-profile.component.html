@@ -1,0 +1,25 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened class="sidebar">
+    <mat-card class="sidebar-card">Classifieds-web-interface</mat-card>
+
+    <p class="user">{{ user.name }}</p></mat-drawer
+  >
+
+  <mat-drawer-content>
+    <div fxLayoutAlign="center center" fxFlexFill class="toolbar">
+      <mat-card fxFlexFill>
+        <mat-toolbar color="primary">
+          <h1 class="header">My Ads</h1>
+        </mat-toolbar>
+        <div class="ads-container">
+          <!--Row with three equal columns-->
+          <div class="ads-row">
+            <div class="ad col-lg-4" *ngFor="let id of user.ads">
+              <app-list-ad [isUser]="isUser" [adId]="id"> </app-list-ad>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

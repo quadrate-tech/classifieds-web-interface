@@ -25,10 +25,20 @@
   >
     <i class="fa fa-user-plus"></i> Register
   </a>
-  <a *ngIf="isLogged" class="nav-item nav-link" href="#">
+  <a
+    *ngIf="isLogged"
+    class="nav-item nav-link"
+    [routerLink]="['/me']"
+    routerLinkActive="active"
+  >
     <i class="fa fa-user"></i> Profile
   </a>
-  <a *ngIf="isLogged" class="nav-item nav-link" href="#">
+  <a
+    *ngIf="isLogged"
+    class="nav-item nav-link"
+    [routerLink]="['/ad/create']"
+    routerLinkActive="active"
+  >
     <i class="fa fa-plus-square"></i> Ad Post
   </a>
   <a

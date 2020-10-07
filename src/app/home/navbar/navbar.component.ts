@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
   isLogged: boolean;
   ngOnInit(): void {
-    this.isLogged = false; //should call auth service isLogges function
+    this.isLogged = true; //should call auth service isLogges function
   }
   setActive(e) {
     console.log(e);

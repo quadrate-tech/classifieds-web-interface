@@ -5,7 +5,7 @@ import { ListPaymentComponent } from './payments/list-payment/list-payment.compo
 import { EditPaymentComponent } from './payments/edit-payment/edit-payment.component';
 import { CreateParentCategoryComponent } from './categories/create-parent-category/create-parent-category.component';
 import { SubCategoryComponent } from './categories/sub-category/sub-category.component';
-import { UserComponent } from './user/user.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { CreateAdComponent } from './ad/create-ad/create-ad.component';
 import { ListAdComponent } from './ad/list-ad/list-ad.component';
 
@@ -32,16 +32,16 @@ const routes: Routes = [
   { component: PromotionAdDetailsEditComponent, path: 'promotedAd/add' },
   { component: PromotionAdDetailsEditComponent, path: 'promotedAd/edit/:id' },
   { component: ListAdComponent, path: 'ads/:id' },
-  { path: 'home', component: HomeWelcomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopComponent },
-  // { path: '', component: UserComponent },
   { path: 'me/subCategory', component: SubCategoryComponent },
-  { path: 'me/ad', component: CreateAdComponent },
+  { path: 'ad/create', component: CreateAdComponent },
   { path: 'me/parentCategory', component: CreateParentCategoryComponent },
+  { path: 'me', component: UserProfileComponent },
+  { path: 'home', component: HomeWelcomeComponent },
 ];
 
 @NgModule({

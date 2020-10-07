@@ -7,11 +7,17 @@
     <p class="card-text by">Posted By {{ ad.ad_posted_by }}</p>
   </div>
   <div class="btns">
-    <button class="btn btn-outline-primary wish">
+    <button *ngIf="!isUser" class="btn btn-outline-primary wish">
       <i class="fa fa-heart"></i> Wishlist
     </button>
-    <button class="btn btn-outline-primary buy">
+    <button *ngIf="!isUser" class="btn btn-outline-primary buy">
       <i class="fa fa-shopping-basket"></i> Buy
+    </button>
+    <button *ngIf="isUser" class="btn btn-outline-primary wish">
+      <i class="fa fa-edit"></i> Edit
+    </button>
+    <button *ngIf="isUser" class="btn btn-outline-primary buy">
+      <i class="fa fa-trash"></i> Delete
     </button>
   </div>
 </div>

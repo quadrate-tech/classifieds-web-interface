@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
 import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { PaymentsModule } from './payments/payments.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CreateParentCategoryComponent } from './categories/create-parent-category/create-parent-category.component';
-import { SubCategoryComponent } from './categories/sub-category/sub-category.component';
-import { UserComponent } from './user/user.component';
+
+import { UserModule } from './user/user.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -39,10 +38,10 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     PromotionAdDetailsComponent,
-    UserComponent,
     PromotionAdDetailsEditComponent,
   ],
   imports: [
+    UserModule,
     HomeModule,
     DistrictsModule,
     AdModule,

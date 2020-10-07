@@ -18,9 +18,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ListAdComponent implements OnInit {
   ad: Ad;
   @Input('adId') id: number;
-  @Input() width;
-  @Input() height;
-  @Input() scale;
+  @Input('isUser') isUser: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private renderer: Renderer2,
@@ -39,16 +38,5 @@ export class ListAdComponent implements OnInit {
       'https://i.ibb.co/1nb7YWR/Pngtree-black-suit-1267605.png',
     ];
   }
-  ngAfterViewInit() {
-    this.renderer.setStyle(
-      this.elRef.nativeElement,
-      'height',
-      this.height + '%'
-    );
-    this.renderer.setStyle(
-      this.elRef.nativeElement,
-      'transform',
-      'scale(' + this.scale + ')'
-    );
-  }
+  ngAfterViewInit() {}
 }

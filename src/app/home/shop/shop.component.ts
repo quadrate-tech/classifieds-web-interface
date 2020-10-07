@@ -12,7 +12,10 @@ export class ShopComponent implements OnInit {
   categories: Array<object>;
   ids: Array<number>;
   page: number;
+  isUser: boolean;
   ngOnInit(): void {
+    //should set isUser from the service
+    this.isUser = false;
     document.getElementById('');
     this.page = 1;
     this.ids = [1, 2, 3, 4, 5, 6]; //should call api with current page number

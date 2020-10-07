@@ -57,9 +57,8 @@
     <div class="container">
       <!--Row with three equal columns-->
       <div class="row">
-        <div class="ad col-lg-4" *ngFor="let id of ids">
-          <app-list-ad [scale]="0.5" [width]="30" [height]="30" [adId]="id">
-          </app-list-ad>
+        <div class="ad-shop col-lg-4" *ngFor="let id of ids">
+          <app-list-ad [isUser]="isUser" [adId]="id"> </app-list-ad>
         </div>
       </div>
     </div>

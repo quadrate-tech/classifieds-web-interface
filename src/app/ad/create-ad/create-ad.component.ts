@@ -11,12 +11,14 @@ import { AdService } from '../../services/ad.service';
   styleUrls: ['./create-ad.component.css'],
 })
 export class CreateAdComponent implements OnInit {
+  user = {
+    name: 'Nada Abdelmaboud',
+  };
   ad: Ad;
   cities: Array<object>;
   types: Array<object>;
   subCategories: Array<object>;
-  hasImage: Boolean;
-  invalidImage: Boolean;
+
   constructor(
     private SubCategoryService: SubCategoryService,
     private AdTypeService: AdTypeService,
@@ -24,21 +26,36 @@ export class CreateAdComponent implements OnInit {
     private AdService: AdService
   ) {
     this.ad = new Ad();
-    this.hasImage = true;
-    this.invalidImage = false;
   }
   createAdForm = new FormGroup({
     name: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
-    images: new FormArray([], Validators.required),
     subCategory: new FormControl('', Validators.required),
   });
   ngOnInit(): void {
     this.types = this.AdTypeService.getTypes();
     this.cities = this.CityService.getCities();
     this.subCategories = this.SubCategoryService.getSubCategories();
+    let inputFile = document.getElementById('customFile');
+    inputFile.addEventListener('change', function () {
+      var fullPath = (<HTMLInputElement>document.getElementById('customFile'))
+        .value;
+      if (fullPath) {
+        var startIndex =
+          fullPath.indexOf('\\') >= 0
+            ? fullPath.lastIndexOf('\\')
+            : fullPath.lastIndexOf('/');
+        var filename = fullPath.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+          filename = filename.substring(1);
+        }
+
+        let label = document.getElementById('inputLabel');
+        label.innerHTML = filename;
+      }
+    });
   }
   get name() {
     return this.createAdForm.get('name');
@@ -59,29 +76,9 @@ export class CreateAdComponent implements OnInit {
     return this.createAdForm.get('subCategory');
   }
   createAd() {
-    if (this.images.length == 0) {
-      this.hasImage = false;
-      return;
-    }
     if (this.createAdForm.hasError) return;
 
     this.ad = this.createAdForm.value;
     console.log(this.AdService.createAd(this.ad));
-  }
-  addImage(image: HTMLInputElement) {
-    if (image.value.length < 10) {
-      this.invalidImage = true;
-      this.hasImage = true;
-      return;
-    }
-
-    this.images.push(new FormControl(image.value));
-    image.value = '';
-    this.invalidImage = false;
-    this.hasImage = true;
-  }
-  removeImage(image: FormControl) {
-    let index = this.images.controls.indexOf(image);
-    this.images.removeAt(index);
   }
 }

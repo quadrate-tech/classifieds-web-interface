@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
@@ -16,12 +17,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CitiesComponent } from './cities/cities.component';
-import { CreateDistrictComponent } from './create-district/create-district.component';
-
+import { AdModule } from '../ad/ad.module';
 @NgModule({
-  declarations: [CitiesComponent, CreateDistrictComponent],
+  declarations: [UserProfileComponent],
   imports: [
+    AdModule,
     CommonModule,
     NoopAnimationsModule,
     FlexLayoutModule,
@@ -40,6 +40,6 @@ import { CreateDistrictComponent } from './create-district/create-district.compo
     MatTabsModule,
     MatFormFieldModule,
   ],
-  exports: [CitiesComponent, CreateDistrictComponent],
+  exports: [UserProfileComponent],
 })
-export class DistrictsModule {}
+export class UserModule {}
