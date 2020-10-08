@@ -5,24 +5,10 @@
     <button (click)="setComponent('users')" class="side-btns btn btn-primary">
       manage users
     </button>
-    <button
-      (click)="setComponent('payments')"
-      class="side-btns btn btn-primary"
-    >
-      manage payments
+    <button (click)="setComponent('ads')" class="side-btns btn btn-primary">
+      manage ads
     </button>
-    <button
-      (click)="setComponent('promotion')"
-      class="side-btns btn btn-primary"
-    >
-      manage promotions
-    </button>
-    <button
-      (click)="setComponent('promotedAd')"
-      class="side-btns btn btn-primary"
-    >
-      manage promotion ad details
-    </button>
+
     <button (click)="setComponent('cities')" class="side-btns btn btn-primary">
       manage cities
     </button>
@@ -43,6 +29,27 @@
       class="side-btns btn btn-primary"
     >
       manage subcategories
+    </button>
+    <button (click)="setComponent('adTypes')" class="side-btns btn btn-primary">
+      manage ad types
+    </button>
+    <button
+      (click)="setComponent('payments')"
+      class="side-btns btn btn-primary"
+    >
+      manage payments
+    </button>
+    <button
+      (click)="setComponent('promotion')"
+      class="side-btns btn btn-primary"
+    >
+      manage promotions
+    </button>
+    <button
+      (click)="setComponent('promotedAd')"
+      class="side-btns btn btn-primary"
+    >
+      manage promotion ad details
     </button>
   </mat-drawer>
 
@@ -84,6 +91,14 @@
           *ngIf="listComponents['subCategories']"
           class="items"
         ></app-manage-subcategories>
+        <app-manage-ad
+          *ngIf="listComponents['ads']"
+          class="items"
+        ></app-manage-ad>
+        <app-manage-ad-types
+          *ngIf="listComponents['adTypes']"
+          class="items"
+        ></app-manage-ad-types>
       </mat-card>
     </div>
   </mat-drawer-content>

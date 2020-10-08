@@ -30,6 +30,8 @@ import { PromotionModule } from '../promotion/promotion.module';
 import { DistrictsModule } from '../districts/districts.module';
 import { ManageCitiesComponent } from './manage-cities/manage-cities.component';
 import { CategoriesModule } from '../categories/categories.module';
+import { AdModule } from '../ad/ad.module';
+import { ManageAdTypesComponent } from './manage-ad-types/manage-ad-types.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -42,8 +44,10 @@ import { CategoriesModule } from '../categories/categories.module';
     ManageAdComponent,
     ManageSubcategoriesComponent,
     ManageCitiesComponent,
+    ManageAdTypesComponent,
   ],
   imports: [
+    AdModule,
     CategoriesModule,
     DistrictsModule,
     PromotionModule,

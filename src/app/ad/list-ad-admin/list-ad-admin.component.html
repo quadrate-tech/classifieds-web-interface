@@ -1,0 +1,36 @@
+<h2 style="margin: 20px;">Ads List</h2>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">Ad Id</th>
+      <th scope="col">Ad Name</th>
+      <th scope="col">Ad Price</th>
+      <th scope="col">Ad Posted By</th>
+      <th scope="col">Ad Category</th>
+      <th scope="col">Ad City</th>
+      <th scope="col">Ad Posted Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of ads">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.ad_posted_by }}</td>
+      <td>{{ item.ad_category }}</td>
+      <td>{{ item.city }}</td>
+      <td>{{ item.ad_posted_date | date }}</td>
+      <td>
+        <i
+          (click)="deleteAd(item.id)"
+          class="fa fa-trash danger"
+          style="color: red;"
+        ></i>
+        <a (click)="editAd(item.id)">
+          <i class="fa fa-edit primary" style="color: blue;"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

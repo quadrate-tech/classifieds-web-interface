@@ -17,7 +17,11 @@
     >
       <i class="fa fa-shopping-basket"></i> Buy
     </button>
-    <button *ngIf="isUser" class="btn btn-outline-primary wish">
+    <button
+      *ngIf="isUser"
+      (click)="navEdit()"
+      class="btn btn-outline-primary wish"
+    >
       <i class="fa fa-edit"></i> Edit
     </button>
     <button *ngIf="isUser" class="btn btn-outline-primary buy">

@@ -1,1 +1,77 @@
-<p>edit-ad works!</p>
+<form [formGroup]="editAdForm" (ngSubmit)="editAd()">
+  <div class="ad-title">
+    <h1>Edit Ad</h1>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" id="name" type="text" class="form-control" />
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      Ad must have a name
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <select formControlName="city" id="city" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let city of cities" [value]="city.id">{{
+        city.name
+      }}</option>
+    </select>
+
+    <div *ngIf="city.touched && city.invalid" class="alert alert-danger">
+      Ad must have a city
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <select formControlName="type" id="type" class="form-control">
+      <option *ngFor="let type of types" [value]="type.id">{{
+        type.name
+      }}</option>
+    </select>
+
+    <div *ngIf="type.touched && type.invalid" class="alert alert-danger">
+      Ad must have a type
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subCategory">subCategory</label>
+    <select formControlName="subCategory" id="subCategory" class="form-control">
+      <option
+        *ngFor="let subCategory of subCategories"
+        [value]="subCategory.id"
+        >{{ subCategory.name }}</option
+      >
+    </select>
+
+    <div
+      *ngIf="subCategory.touched && subCategory.invalid"
+      class="alert alert-danger"
+    >
+      Ad must have a subCategory
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      formControlName="price"
+      type="number"
+      id="price"
+      class="form-control"
+    />
+    <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
+      Ad must have a price
+    </div>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile" multiple />
+    <label class="custom-file-label" id="inputLabel" for="customFile"
+      >Choose Images</label
+    >
+  </div>
+  <button class="btn btn-primary">
+    Edit Ad
+  </button>
+</form>

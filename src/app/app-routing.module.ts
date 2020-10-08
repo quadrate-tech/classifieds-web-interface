@@ -33,6 +33,11 @@ import { EditParentCategoryComponent } from './categories/edit-parent-category/e
 import { SubCategoryComponent } from './categories/sub-category/sub-category.component';
 import { ListSubcategoryComponent } from './categories/list-subcategory/list-subcategory.component';
 import { EditSubcategoryComponent } from './categories/edit-subcategory/edit-subcategory.component';
+import { EditAdComponent } from './ad/edit-ad/edit-ad.component';
+import { ListAdAdminComponent } from './ad/list-ad-admin/list-ad-admin.component';
+import { AddAdTypeComponent } from './ad/add-ad-type/add-ad-type.component';
+import { EditAdTypeComponent } from './ad/edit-ad-type/edit-ad-type.component';
+import { ListAdTypeComponent } from './ad/list-ad-type/list-ad-type.component';
 
 const routes: Routes = [
   { component: DashboardComponent, path: 'admin' },
@@ -61,14 +66,19 @@ const routes: Routes = [
   { component: ListUsersComponent, path: 'users/list' },
   { component: EditUserComponent, path: 'users/edit/:id' },
   { component: ListAdComponent, path: 'ads/:id' },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'shop', component: ShopComponent },
-  { path: 'ad/create', component: CreateAdComponent },
-  { path: 'me', component: UserProfileComponent },
-  { path: 'home', component: HomeWelcomeComponent },
+  { component: CreateAdComponent, path: 'ad/create' },
+  { component: EditAdComponent, path: 'ads/edit/:id' },
+  { component: ListAdAdminComponent, path: 'ads/list' },
+  { component: AddAdTypeComponent, path: 'adType/add' },
+  { component: EditAdTypeComponent, path: 'adType/edit/:id' },
+  { component: ListAdTypeComponent, path: 'adType/list' },
+  { component: AboutComponent, path: 'about' },
+  { component: LoginComponent, path: 'login' },
+  { component: RegisterComponent, path: 'register' },
+  { component: ContactComponent, path: 'contact' },
+  { component: ShopComponent, path: 'shop' },
+  { component: UserProfileComponent, path: 'me' },
+  { component: HomeWelcomeComponent, path: '' },
 ];
 
 @NgModule({

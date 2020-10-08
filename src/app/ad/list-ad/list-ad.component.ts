@@ -26,7 +26,9 @@ export class ListAdComponent implements OnInit {
   navBuy() {
     this.router.navigate(['/payment/add']);
   }
-  editAd() {}
+  navEdit() {
+    this.router.navigate([`/ads/edit/${this.id}`]);
+  }
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     //should get data from api with id in the path

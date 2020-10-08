@@ -1,0 +1,56 @@
+.ad-title {
+  border-radius: 20px;
+  position: relative;
+  min-width: 100%;
+  min-height: 30%;
+  background-image: linear-gradient(to left, #8782c9, #e3eaf8);
+}
+.ad-title h1 {
+  padding: 30px;
+  line-height: 90px;
+  font-weight: 400px;
+  word-spacing: 3px;
+  font-size: 3rem;
+  text-align: center;
+}
+form {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(to right, #dcdcdc, #e3eaf8);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  border-radius: 10px;
+  box-shadow: grey;
+}
+form div.form-group,
+.custom-file {
+  position: relative;
+  max-width: 80%;
+  max-height: 10%;
+  padding: 20px;
+  display: block;
+}
+.custom-file {
+  margin-left: 20px;
+}
+#imagesGroup {
+  padding: 20px;
+}
+label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+}
+
+#imagesInputs {
+  display: inline-block;
+  width: 60%;
+}
+input,
+label {
+  display: block;
+}
+button {
+  margin: 20px;
+}

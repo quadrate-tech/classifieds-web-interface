@@ -23,8 +23,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AddAdTypeComponent } from './add-ad-type/add-ad-type.component';
 import { EditAdTypeComponent } from './edit-ad-type/edit-ad-type.component';
 import { ListAdTypeComponent } from './list-ad-type/list-ad-type.component';
+import { ListAdAdminComponent } from './list-ad-admin/list-ad-admin.component';
 @NgModule({
-  declarations: [CreateAdComponent, EditAdComponent, ListAdComponent, AddAdTypeComponent, EditAdTypeComponent, ListAdTypeComponent],
+  declarations: [
+    CreateAdComponent,
+    EditAdComponent,
+    ListAdComponent,
+    AddAdTypeComponent,
+    EditAdTypeComponent,
+    ListAdTypeComponent,
+    ListAdAdminComponent,
+  ],
   imports: [
     FormsModule,
     CommonModule,
@@ -45,6 +54,14 @@ import { ListAdTypeComponent } from './list-ad-type/list-ad-type.component';
     MatTabsModule,
     MatFormFieldModule,
   ],
-  exports: [CreateAdComponent, EditAdComponent, ListAdComponent],
+  exports: [
+    CreateAdComponent,
+    EditAdComponent,
+    ListAdComponent,
+    AddAdTypeComponent,
+    EditAdTypeComponent,
+    ListAdTypeComponent,
+    ListAdAdminComponent,
+  ],
 })
 export class AdModule {}

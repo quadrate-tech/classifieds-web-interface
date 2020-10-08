@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   listComponents = {
     users: false,
+    ads: false,
     categories: false,
     payments: false,
     promotion: false,
@@ -16,6 +17,7 @@ export class DashboardComponent implements OnInit {
     districts: false,
     parentCategories: false,
     subCategories: false,
+    adTypes: false,
   };
   constructor() {}
 
@@ -32,6 +34,8 @@ export class DashboardComponent implements OnInit {
     this.listComponents['districts'] = false;
     this.listComponents['parentCategories'] = false;
     this.listComponents['subCategories'] = false;
+    this.listComponents['ads'] = false;
+    this.listComponents['adTypes'] = false;
   }
   setComponent(component) {
     this.offAll();
