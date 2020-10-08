@@ -8,12 +8,16 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
-  isLogged: boolean;
+  isLogged: boolean = false;
   ngOnInit(): void {
-    this.isLogged = true; //should call auth service isLogges function
+    if (localStorage.getItem('user') == 'logged') {
+      this.isLogged = true; //should call auth service isLogges function
+    }
+  }
+  logOut() {
+    localStorage.removeItem('user');
   }
   setActive(e) {
-    console.log(e);
     let anchors = document.getElementsByTagName('a');
     for (let i = 0; i < anchors.length; i++) {
       if (anchors[i].classList.contains('active')) {

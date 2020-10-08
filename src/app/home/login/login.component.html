@@ -1,20 +1,41 @@
 <form class="needs-validation" novalidate>
-    <button  type="button" class="btn btn-outline-danger google"><i class="fa fa-google"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sign in with google</button>
-    <h5><span>or</span></h5>
-    <div class="form-group">
-        <label for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-        <div class="invalid-feedback">Please enter a valid email address.</div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-        <div class="invalid-feedback">Please enter your password to continue.</div>
-    </div>
-    <div class="form-group">
-        <label class="form-check-label"><input type="checkbox"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-    <a href="#">Forget Password ?</a>
-    <p>Dont Have An Account ? <button class="btn btn-outline-primary">Sign Up</button> </p>
+  <button type="button" class="btn btn-outline-danger google">
+    <i class="fa fa-google"></i> &nbsp;&nbsp;&nbsp;&nbsp; Sign in with google
+  </button>
+  <h5><span>or</span></h5>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail"
+      placeholder="Email"
+      required
+    />
+    <div class="invalid-feedback">Please enter a valid email address.</div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword"
+      placeholder="Password"
+      required
+    />
+    <div class="invalid-feedback">Please enter your password to continue.</div>
+  </div>
+  <div class="form-group">
+    <label class="form-check-label"
+      ><input type="checkbox" /> Remember me</label
+    >
+  </div>
+  <button (click)="setLogged()" type="submit" class="btn btn-primary">
+    Sign in
+  </button>
+  <a href="#">Forget Password ?</a>
+  <p>
+    Dont Have An Account ?
+    <button class="btn btn-outline-primary">Sign Up</button>
+  </p>
 </form>

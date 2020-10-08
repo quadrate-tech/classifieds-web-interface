@@ -4,8 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { ManageDistrictsComponent } from './manage-districts/manage-districts.component';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
-import { ManageAdApprovalsComponent } from './manage-ad-approvals/manage-ad-approvals.component';
-import { UserModule } from '../user/user.module';
 import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
@@ -21,17 +19,31 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { UserModule } from '../user/user.module';
+import { PaymentsModule } from '../payments/payments.module';
+import { ManagePaymentsComponent } from './manage-payments/manage-payments.component';
+import { ManagePromotionComponent } from './manage-promotion/manage-promotion.component';
+import { ManagePromotionAdDetailsComponent } from './manage-promotion-ad-details/manage-promotion-ad-details.component';
+import { ManageAdComponent } from './manage-ad/manage-ad.component';
+import { ManageSubcategoriesComponent } from './manage-subcategories/manage-subcategories.component';
+import { PromotionModule } from '../promotion/promotion.module';
 @NgModule({
   declarations: [
     DashboardComponent,
     ManageUsersComponent,
     ManageDistrictsComponent,
     ManageCategoriesComponent,
-    ManageAdApprovalsComponent,
+    ManagePaymentsComponent,
+    ManagePromotionComponent,
+    ManagePromotionAdDetailsComponent,
+    ManageAdComponent,
+    ManageSubcategoriesComponent,
   ],
   imports: [
+    PromotionModule,
     CommonModule,
     UserModule,
+    PaymentsModule,
     NoopAnimationsModule,
     FlexLayoutModule,
     MatFormFieldModule,
@@ -52,7 +64,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     ManageUsersComponent,
     ManageDistrictsComponent,
     ManageCategoriesComponent,
-    ManageAdApprovalsComponent,
   ],
 })
 export class AdminModule {}

@@ -9,8 +9,8 @@ import { ListAdComponent } from './ad/list-ad/list-ad.component';
 import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
 import { ListPromotionComponent } from './promotion/list-promotion/list-promotion.component';
 import { EditPromotionComponent } from './promotion/edit-promotion/edit-promotion.component';
-import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotion-ad-details-edit/promotion-ad-details-edit.component';
-import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
+import { PromotionAdDetailsEditComponent } from './promotion/promotion-ad-details-edit/promotion-ad-details-edit.component';
+import { PromotionAdDetailsComponent } from './promotion/promotion-ad-details/promotion-ad-details.component';
 import { HomeWelcomeComponent } from './home/home-welcome/home-welcome.component';
 import { AboutComponent } from './home/about/about.component';
 import { LoginComponent } from './home/login/login.component';
@@ -21,9 +21,12 @@ import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ListUsersComponent } from './user/list-users/list-users.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-
+import { CreateDistrictComponent } from './districts/create-district/create-district.component';
 const routes: Routes = [
   { component: DashboardComponent, path: 'admin' },
+  { component: CreateDistrictComponent, path: 'district/add' },
+  // { component: ListPaymentComponent, path: 'district/list' },
+  // { component: EditPaymentComponent, path: 'district/edit/:id' },
   { component: AddPaymentComponent, path: 'payment/add' },
   { component: ListPaymentComponent, path: 'payment/list' },
   { component: EditPaymentComponent, path: 'payment/edit/:id' },

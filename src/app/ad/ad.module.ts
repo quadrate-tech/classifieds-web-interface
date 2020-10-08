@@ -20,8 +20,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { AddAdTypeComponent } from './add-ad-type/add-ad-type.component';
+import { EditAdTypeComponent } from './edit-ad-type/edit-ad-type.component';
+import { ListAdTypeComponent } from './list-ad-type/list-ad-type.component';
 @NgModule({
-  declarations: [CreateAdComponent, EditAdComponent, ListAdComponent],
+  declarations: [CreateAdComponent, EditAdComponent, ListAdComponent, AddAdTypeComponent, EditAdTypeComponent, ListAdTypeComponent],
   imports: [
     FormsModule,
     CommonModule,

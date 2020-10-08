@@ -6,7 +6,6 @@ import { CreateDistrictComponent } from './districts/create-district/create-dist
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { PromotionAdDetailsComponent } from './promotion-ad-details/promotion-ad-details.component';
 import { PaymentsModule } from './payments/payments.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,7 +25,6 @@ import { CityService } from './services/city.service';
 import { AdTypeService } from './services/ad-type.service';
 import { SubCategoryService } from './services/sub-category.service';
 import { PromotionModule } from './promotion/promotion.module';
-import { PromotionAdDetailsEditComponent } from './promotion-ad-details/promotion-ad-details-edit/promotion-ad-details-edit.component';
 import { HomeModule } from './home/home.module';
 import { AdModule } from './ad/ad.module';
 import { DistrictsModule } from './districts/districts.module';
@@ -36,11 +34,7 @@ import { AdminModule } from './admin/admin.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PromotionAdDetailsComponent,
-    PromotionAdDetailsEditComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     AdminModule,
     UserModule,

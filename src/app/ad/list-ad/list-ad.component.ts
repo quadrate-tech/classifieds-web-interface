@@ -7,7 +7,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { Ad } from 'src/app/models/ad';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -20,14 +20,13 @@ export class ListAdComponent implements OnInit {
   @Input('adId') id: number;
   @Input('isUser') isUser: boolean;
 
-  constructor(
-    private route: ActivatedRoute,
-    private renderer: Renderer2,
-    private elRef: ElementRef
-  ) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.ad = new Ad();
   }
-
+  navBuy() {
+    this.router.navigate(['/payment/add']);
+  }
+  editAd() {}
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     //should get data from api with id in the path

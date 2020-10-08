@@ -2,7 +2,27 @@
   <mat-drawer mode="side" opened class="sidebar">
     <mat-card class="sidebar-card">Classifieds-web-interface</mat-card>
 
-    <button class="side-btns btn btn-primary">manage users</button>
+    <button (click)="setComponent('users')" class="side-btns btn btn-primary">
+      manage users
+    </button>
+    <button
+      (click)="setComponent('payments')"
+      class="side-btns btn btn-primary"
+    >
+      manage payments
+    </button>
+    <button
+      (click)="setComponent('promotion')"
+      class="side-btns btn btn-primary"
+    >
+      manage promotions
+    </button>
+    <button
+      (click)="setComponent('promotedAd')"
+      class="side-btns btn btn-primary"
+    >
+      manage promotion ad details
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
@@ -11,7 +31,22 @@
         <mat-toolbar color="primary">
           <h1 class="header">Dashboard</h1>
         </mat-toolbar>
-        <app-manage-users class="items"></app-manage-users>
+        <app-manage-users
+          *ngIf="listComponents['users']"
+          class="items"
+        ></app-manage-users>
+        <app-manage-payments
+          *ngIf="listComponents['payments']"
+          class="items"
+        ></app-manage-payments>
+        <app-manage-promotion
+          *ngIf="listComponents['promotion']"
+          class="items"
+        ></app-manage-promotion>
+        <app-manage-promotion-ad-details
+          *ngIf="listComponents['promotedAd']"
+          class="items"
+        ></app-manage-promotion-ad-details>
       </mat-card>
     </div>
   </mat-drawer-content>

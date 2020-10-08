@@ -63,7 +63,21 @@
   >
     <i class="fa fa-inbox"></i> Contact Us
   </a>
-  <a href="#" class="nav-item nav-link" *ngIf="!isLogged">
+  <a
+    [routerLink]="['/admin']"
+    routerLinkActive="active"
+    class="nav-item nav-link"
+    *ngIf="!isLogged"
+  >
     <i class="fa fa-columns"></i> Dashboard
+  </a>
+  <a
+    (click)="logOut()"
+    [routerLink]="['/home']"
+    routerLinkActive="active"
+    class="nav-item nav-link"
+    *ngIf="isLogged"
+  >
+    <i class="fa fa-columns"></i> Logout
   </a>
 </nav>

@@ -16,11 +16,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CitiesComponent } from './cities/cities.component';
 import { CreateDistrictComponent } from './create-district/create-district.component';
+import { EditDistrictComponent } from './edit-district/edit-district.component';
+import { ListDistrictsComponent } from './list-districts/list-districts.component';
+import { AddCityComponent } from './add-city/add-city.component';
+import { EditCityComponent } from './edit-city/edit-city.component';
+import { ListCityComponent } from './list-city/list-city.component';
 
 @NgModule({
-  declarations: [CitiesComponent, CreateDistrictComponent],
+  declarations: [
+    CreateDistrictComponent,
+    EditDistrictComponent,
+    ListDistrictsComponent,
+    AddCityComponent,
+    EditCityComponent,
+    ListCityComponent,
+  ],
   imports: [
     CommonModule,
     NoopAnimationsModule,
@@ -40,6 +51,6 @@ import { CreateDistrictComponent } from './create-district/create-district.compo
     MatTabsModule,
     MatFormFieldModule,
   ],
-  exports: [CitiesComponent, CreateDistrictComponent],
+  exports: [CreateDistrictComponent],
 })
 export class DistrictsModule {}

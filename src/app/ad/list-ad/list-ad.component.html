@@ -10,7 +10,11 @@
     <button *ngIf="!isUser" class="btn btn-outline-primary wish">
       <i class="fa fa-heart"></i> Wishlist
     </button>
-    <button *ngIf="!isUser" class="btn btn-outline-primary buy">
+    <button
+      (click)="navBuy()"
+      *ngIf="!isUser"
+      class="btn btn-outline-primary buy"
+    >
       <i class="fa fa-shopping-basket"></i> Buy
     </button>
     <button *ngIf="isUser" class="btn btn-outline-primary wish">
