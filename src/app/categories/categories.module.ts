@@ -9,8 +9,22 @@ import { ListSubcategoryComponent } from './list-subcategory/list-subcategory.co
 import { EditParentCategoryComponent } from './edit-parent-category/edit-parent-category.component';
 import { ListParentCategoryComponent } from './list-parent-category/list-parent-category.component';
 @NgModule({
-  declarations: [CreateParentCategoryComponent, SubCategoryComponent, EditSubcategoryComponent, ListSubcategoryComponent, EditParentCategoryComponent, ListParentCategoryComponent],
+  declarations: [
+    CreateParentCategoryComponent,
+    SubCategoryComponent,
+    EditSubcategoryComponent,
+    ListSubcategoryComponent,
+    EditParentCategoryComponent,
+    ListParentCategoryComponent,
+  ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
-  exports: [CreateParentCategoryComponent, SubCategoryComponent],
+  exports: [
+    CreateParentCategoryComponent,
+    SubCategoryComponent,
+    EditSubcategoryComponent,
+    ListSubcategoryComponent,
+    EditParentCategoryComponent,
+    ListParentCategoryComponent,
+  ],
 })
 export class CategoriesModule {}

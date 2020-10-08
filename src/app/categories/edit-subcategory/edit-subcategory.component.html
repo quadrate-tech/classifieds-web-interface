@@ -1,1 +1,56 @@
-<p>edit-subcategory works!</p>
+<div class="container">
+  <div class="font-weight-bold h5 p-5">Edit Category</div>
+
+  <form>
+    <div class="form-group">
+      <label for="category_id">Category Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="category_id"
+        name="category_id"
+        [(ngModel)]="category.id"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="category_name">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category_name"
+        name="name"
+        [(ngModel)]="category.name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="parentCategory">Parent Category Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="parentCategory"
+        name="name"
+        [(ngModel)]="category.parent_category"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        class="form-group btn btn-success"
+        type="submit"
+        (click)="editCategory()"
+      >
+        Edit Category
+      </button>
+      <a
+        class="btn btn-danger form-group ml-3"
+        [routerLink]="['/subCategories/list']"
+        routerLinkActive="active"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>

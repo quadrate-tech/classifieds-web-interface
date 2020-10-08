@@ -1,34 +1,56 @@
-<form [formGroup]="subCategoryForm" (ngSubmit)="createCategory()">
-  <h1>Create Sub-Category</h1>
-  <div class="form-group">
-    <label for="parent">Parent Category</label>
-    <select formControlName="parent" id="parent" class="form-control">
-      <option value=""></option>
-      <option *ngFor="let parent of parents" [value]="parent.id">{{
-        parent.name
-      }}</option>
-    </select>
+<div class="container">
+  <div class="font-weight-bold h5 p-5">Add Category</div>
 
-    <div *ngIf="parent.touched && parent.invalid" class="alert alert-danger">
-      SubCategory must belong to a parent category
+  <form>
+    <div class="form-group">
+      <label for="category_id">Category Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="category_id"
+        name="category_id"
+        [(ngModel)]="category.id"
+        required
+      />
     </div>
-  </div>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input id="name" formControlName="name" type="text" class="form-control" />
-    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
-      Category must have a name
+    <div class="form-group">
+      <label for="category_name">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category_name"
+        name="name"
+        [(ngModel)]="category.name"
+        required
+      />
     </div>
-  </div>
-  <div class="form-group">
-    <label for="id">ID</label>
-    <input id="id" formControlName="id" type="number" class="form-control" />
-    <div *ngIf="id.touched && id.invalid" class="alert alert-danger">
-      Category must have an ID
-    </div>
-  </div>
 
-  <button class="btn btn-primary">
-    Create Category
-  </button>
-</form>
+    <div class="form-group">
+      <label for="parentCategory">Parent Category Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="parentCategory"
+        name="name"
+        [(ngModel)]="category.parent_category"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        class="form-group btn btn-success"
+        type="submit"
+        (click)="addCategory()"
+      >
+        Add Category
+      </button>
+      <a
+        class="btn btn-danger form-group ml-3"
+        [routerLink]="['/subCategories/list']"
+        routerLinkActive="active"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>

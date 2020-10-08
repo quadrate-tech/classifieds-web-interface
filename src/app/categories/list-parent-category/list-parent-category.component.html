@@ -1,1 +1,28 @@
-<p>list-parent-category works!</p>
+<h2 style="margin: 20px;">Categories List</h2>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">Category Id</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">Is Deleted</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of categories">
+      <th scope="row">{{ item.category_id }}</th>
+      <td>{{ item.category_name }}</td>
+      <td>{{ item.is_deleted }}</td>
+      <td>
+        <i
+          (click)="deleteCategory(item.category_id)"
+          class="fa fa-trash danger"
+          style="color: red;"
+        ></i>
+        <a (click)="editCategory(item.category_id)">
+          <i class="fa fa-edit primary" style="color: blue;"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

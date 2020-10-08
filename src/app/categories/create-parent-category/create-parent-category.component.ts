@@ -6,6 +6,7 @@ import {
   FormArray,
   Form,
 } from '@angular/forms';
+import { ParentCategory } from 'src/app/models/parent-category';
 import { ParentCategoryService } from '../../services/parent-category.service';
 
 @Component({
@@ -14,34 +15,11 @@ import { ParentCategoryService } from '../../services/parent-category.service';
   styleUrls: ['./create-parent-category.component.css'],
 })
 export class CreateParentCategoryComponent implements OnInit {
-  constructor(private ParentCategoryService: ParentCategoryService) {}
-  createParentCategoryForm = new FormGroup({
-    id: new FormControl('', Validators.required),
-    name: new FormControl('', Validators.required),
-  });
-  isUnique: Boolean;
+  category: ParentCategory;
+  constructor() {}
+
   ngOnInit(): void {
-    this.isUnique = true;
+    this.category = new ParentCategory();
   }
-  get id() {
-    return this.createParentCategoryForm.get('id');
-  }
-  get name() {
-    return this.createParentCategoryForm.get('name');
-  }
-  createCategory() {
-    if (this.createParentCategoryForm.hasError) return;
-    this.isUnique = this.ParentCategoryService.checkUnique(
-      this.createParentCategoryForm.value
-    );
-    if (!this.isUnique) {
-      return;
-    }
-    console.log(
-      this.ParentCategoryService.createParentCategory(
-        this.createParentCategoryForm.value
-      )
-    );
-    this.createParentCategoryForm.reset('');
-  }
+  addCategory() {}
 }

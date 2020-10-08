@@ -32,6 +32,18 @@
     >
       manage districts
     </button>
+    <button
+      (click)="setComponent('parentCategories')"
+      class="side-btns btn btn-primary"
+    >
+      manage parent categories
+    </button>
+    <button
+      (click)="setComponent('subCategories')"
+      class="side-btns btn btn-primary"
+    >
+      manage subcategories
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
@@ -64,6 +76,14 @@
           *ngIf="listComponents['districts']"
           class="items"
         ></app-manage-districts>
+        <app-manage-categories
+          *ngIf="listComponents['parentCategories']"
+          class="items"
+        ></app-manage-categories>
+        <app-manage-subcategories
+          *ngIf="listComponents['subCategories']"
+          class="items"
+        ></app-manage-subcategories>
       </mat-card>
     </div>
   </mat-drawer-content>

@@ -27,8 +27,21 @@ import { EditCityComponent } from './districts/edit-city/edit-city.component';
 import { ListCityComponent } from './districts/list-city/list-city.component';
 import { ListDistrictsComponent } from './districts/list-districts/list-districts.component';
 import { EditDistrictComponent } from './districts/edit-district/edit-district.component';
+import { CreateParentCategoryComponent } from './categories/create-parent-category/create-parent-category.component';
+import { ListParentCategoryComponent } from './categories/list-parent-category/list-parent-category.component';
+import { EditParentCategoryComponent } from './categories/edit-parent-category/edit-parent-category.component';
+import { SubCategoryComponent } from './categories/sub-category/sub-category.component';
+import { ListSubcategoryComponent } from './categories/list-subcategory/list-subcategory.component';
+import { EditSubcategoryComponent } from './categories/edit-subcategory/edit-subcategory.component';
+
 const routes: Routes = [
   { component: DashboardComponent, path: 'admin' },
+  { component: CreateParentCategoryComponent, path: 'parentCategories/add' },
+  { component: ListParentCategoryComponent, path: 'parentCategories/list' },
+  { component: EditParentCategoryComponent, path: 'parentCategories/edit/:id' },
+  { component: SubCategoryComponent, path: 'subCategories/add' },
+  { component: ListSubcategoryComponent, path: 'subCategories/list' },
+  { component: EditSubcategoryComponent, path: 'subCategories/edit/:id' },
   { component: CreateDistrictComponent, path: 'district/add' },
   { component: ListDistrictsComponent, path: 'district/list' },
   { component: EditDistrictComponent, path: 'district/edit/:id' },

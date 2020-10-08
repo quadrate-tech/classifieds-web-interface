@@ -29,6 +29,7 @@ import { ManageSubcategoriesComponent } from './manage-subcategories/manage-subc
 import { PromotionModule } from '../promotion/promotion.module';
 import { DistrictsModule } from '../districts/districts.module';
 import { ManageCitiesComponent } from './manage-cities/manage-cities.component';
+import { CategoriesModule } from '../categories/categories.module';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -43,6 +44,7 @@ import { ManageCitiesComponent } from './manage-cities/manage-cities.component';
     ManageCitiesComponent,
   ],
   imports: [
+    CategoriesModule,
     DistrictsModule,
     PromotionModule,
     CommonModule,

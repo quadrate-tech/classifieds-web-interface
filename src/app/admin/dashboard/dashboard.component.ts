@@ -14,6 +14,8 @@ export class DashboardComponent implements OnInit {
     promotedAd: false,
     cities: false,
     districts: false,
+    parentCategories: false,
+    subCategories: false,
   };
   constructor() {}
 
@@ -28,6 +30,8 @@ export class DashboardComponent implements OnInit {
     this.listComponents['promotedAd'] = false;
     this.listComponents['cities'] = false;
     this.listComponents['districts'] = false;
+    this.listComponents['parentCategories'] = false;
+    this.listComponents['subCategories'] = false;
   }
   setComponent(component) {
     this.offAll();

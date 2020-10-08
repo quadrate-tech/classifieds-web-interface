@@ -1,1 +1,57 @@
-<p>edit-parent-category works!</p>
+<div class="container">
+  <div class="font-weight-bold h5 p-5">Edit Category</div>
+
+  <form>
+    <div class="form-group">
+      <label for="category_id">Category Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="category_id"
+        name="category_id"
+        [(ngModel)]="category.category_id"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="category_name">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category_name"
+        name="name"
+        [(ngModel)]="category.category_name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="isDeleted">Is Deleted</label>
+      <input
+        type="checkbox"
+        class="form-control"
+        style="max-width: 20px;"
+        id="isDeleted"
+        name="name"
+        [(ngModel)]="category.is_deleted"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        class="form-group btn btn-success"
+        type="submit"
+        (click)="editCategory()"
+      >
+        Edit Category
+      </button>
+      <a
+        class="btn btn-danger form-group ml-3"
+        [routerLink]="['/parentCategories/list']"
+        routerLinkActive="active"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
