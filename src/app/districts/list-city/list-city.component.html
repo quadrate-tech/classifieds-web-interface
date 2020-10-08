@@ -1,1 +1,28 @@
-<p>list-city works!</p>
+<h2 style="margin: 20px;">Cities List</h2>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">City Id</th>
+      <th scope="col">City Name</th>
+      <th scope="col">District Id</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cities">
+      <th scope="row">{{ item.city_id }}</th>
+      <td>{{ item.city_name }}</td>
+      <td>{{ item.district_id }}</td>
+      <td>
+        <i
+          (click)="deleteCity(item.city_id)"
+          class="fa fa-trash danger"
+          style="color: red;"
+        ></i>
+        <a (click)="editCity(item.city_id)">
+          <i class="fa fa-edit primary" style="color: blue;"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

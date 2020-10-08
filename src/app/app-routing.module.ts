@@ -22,11 +22,17 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ListUsersComponent } from './user/list-users/list-users.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { CreateDistrictComponent } from './districts/create-district/create-district.component';
+import { AddCityComponent } from './districts/add-city/add-city.component';
+import { EditCityComponent } from './districts/edit-city/edit-city.component';
+import { ListCityComponent } from './districts/list-city/list-city.component';
 const routes: Routes = [
   { component: DashboardComponent, path: 'admin' },
   { component: CreateDistrictComponent, path: 'district/add' },
   // { component: ListPaymentComponent, path: 'district/list' },
   // { component: EditPaymentComponent, path: 'district/edit/:id' },
+  { component: AddCityComponent, path: 'city/add' },
+  { component: ListCityComponent, path: 'city/list' },
+  { component: EditCityComponent, path: 'city/edit/:id' },
   { component: AddPaymentComponent, path: 'payment/add' },
   { component: ListPaymentComponent, path: 'payment/list' },
   { component: EditPaymentComponent, path: 'payment/edit/:id' },
@@ -45,9 +51,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopComponent },
-  // { path: 'me/subCategory', component: SubCategoryComponent },
   { path: 'ad/create', component: CreateAdComponent },
-  // { path: 'me/parentCategory', component: CreateParentCategoryComponent },
   { path: 'me', component: UserProfileComponent },
   { path: 'home', component: HomeWelcomeComponent },
 ];

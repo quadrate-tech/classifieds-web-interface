@@ -23,6 +23,9 @@
     >
       manage promotion ad details
     </button>
+    <button (click)="setComponent('cities')" class="side-btns btn btn-primary">
+      manage cities
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
@@ -47,6 +50,10 @@
           *ngIf="listComponents['promotedAd']"
           class="items"
         ></app-manage-promotion-ad-details>
+        <app-manage-cities
+          *ngIf="listComponents['cities']"
+          class="items"
+        ></app-manage-cities>
       </mat-card>
     </div>
   </mat-drawer-content>

@@ -51,6 +51,13 @@ import { ListCityComponent } from './list-city/list-city.component';
     MatTabsModule,
     MatFormFieldModule,
   ],
-  exports: [CreateDistrictComponent],
+  exports: [
+    CreateDistrictComponent,
+    EditDistrictComponent,
+    ListDistrictsComponent,
+    AddCityComponent,
+    EditCityComponent,
+    ListCityComponent,
+  ],
 })
 export class DistrictsModule {}
