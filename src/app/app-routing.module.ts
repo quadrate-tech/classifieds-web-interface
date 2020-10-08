@@ -25,11 +25,13 @@ import { CreateDistrictComponent } from './districts/create-district/create-dist
 import { AddCityComponent } from './districts/add-city/add-city.component';
 import { EditCityComponent } from './districts/edit-city/edit-city.component';
 import { ListCityComponent } from './districts/list-city/list-city.component';
+import { ListDistrictsComponent } from './districts/list-districts/list-districts.component';
+import { EditDistrictComponent } from './districts/edit-district/edit-district.component';
 const routes: Routes = [
   { component: DashboardComponent, path: 'admin' },
   { component: CreateDistrictComponent, path: 'district/add' },
-  // { component: ListPaymentComponent, path: 'district/list' },
-  // { component: EditPaymentComponent, path: 'district/edit/:id' },
+  { component: ListDistrictsComponent, path: 'district/list' },
+  { component: EditDistrictComponent, path: 'district/edit/:id' },
   { component: AddCityComponent, path: 'city/add' },
   { component: ListCityComponent, path: 'city/list' },
   { component: EditCityComponent, path: 'city/edit/:id' },

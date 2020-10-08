@@ -22,7 +22,7 @@ import { ListDistrictsComponent } from './list-districts/list-districts.componen
 import { AddCityComponent } from './add-city/add-city.component';
 import { EditCityComponent } from './edit-city/edit-city.component';
 import { ListCityComponent } from './list-city/list-city.component';
-
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     CreateDistrictComponent,
@@ -33,6 +33,7 @@ import { ListCityComponent } from './list-city/list-city.component';
     ListCityComponent,
   ],
   imports: [
+    RouterModule,
     CommonModule,
     NoopAnimationsModule,
     FlexLayoutModule,

@@ -26,6 +26,12 @@
     <button (click)="setComponent('cities')" class="side-btns btn btn-primary">
       manage cities
     </button>
+    <button
+      (click)="setComponent('districts')"
+      class="side-btns btn btn-primary"
+    >
+      manage districts
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
@@ -54,6 +60,10 @@
           *ngIf="listComponents['cities']"
           class="items"
         ></app-manage-cities>
+        <app-manage-districts
+          *ngIf="listComponents['districts']"
+          class="items"
+        ></app-manage-districts>
       </mat-card>
     </div>
   </mat-drawer-content>

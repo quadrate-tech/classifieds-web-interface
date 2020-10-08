@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
     promotion: false,
     promotedAd: false,
     cities: false,
+    districts: false,
   };
   constructor() {}
 
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
     this.listComponents['promotion'] = false;
     this.listComponents['promotedAd'] = false;
     this.listComponents['cities'] = false;
+    this.listComponents['districts'] = false;
   }
   setComponent(component) {
     this.offAll();

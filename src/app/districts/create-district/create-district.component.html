@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="font-weight-bold h5 p-5">Add District</div>
+
+  <form>
+    <div class="form-group">
+      <label for="district_id">District Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="district_id"
+        name="name"
+        [(ngModel)]="district.district_id"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="district_name">District Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="district_name"
+        name="name"
+        [(ngModel)]="district.district_name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        class="form-group btn btn-success"
+        type="submit"
+        (click)="addDistrict()"
+      >
+        Add District
+      </button>
+      <a
+        class="btn btn-danger form-group ml-3"
+        [routerLink]="['/district/list']"
+        routerLinkActive="active"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
