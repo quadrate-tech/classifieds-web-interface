@@ -1,24 +1,24 @@
 <div class="container">
   <div class="font-weight-bold h5 p-5">{{type}} Promoted Ad Details</div>
 
-  <form>
+  <form #form="ngForm">
     <div class="form-group">
       <label for="pa_ad_id">pa_ad_id</label>
-      <input type="number" class="form-control" id="pa_ad_id" name="name" [(ngModel)]="promotedAdDetails.pa_ad_id" required>
+      <input type="number" class="form-control" id="pa_ad_id" name="pa_ad_id" [(ngModel)]="this.promotedAdDetails.pa_ad_id" required>
     </div>
     <div class="form-group">
       <label for="ad_id">Advertisement Id</label>
-      <input type="number" class="form-control" id="ad_id" name="name" [(ngModel)]="promotedAdDetails.ad_id" required>
+      <input type="number" class="form-control" id="ad_id" name="ad_id" [(ngModel)]="promotedAdDetails.ad_id" required>
     </div>
 
     <div class="form-group">
       <label for="promotion_id">Promotion Id</label>
-      <input type="number" class="form-control" id="promotion_id" name="name" [(ngModel)]="promotedAdDetails.promotion_id" required>
+      <input type="number" class="form-control" id="promotion_id" name="promotion_id" [(ngModel)]="promotedAdDetails.promotion_id" required>
     </div>
 
     <div class="form-group">
       <label for="starting_date">Starting Date</label>
-      <input type="string" class="form-control" id="starting_date" name="name" [(ngModel)]="promotedAdDetails.starting_date" required>
+      <input type="string" class="form-control" id="starting_date" name="starting_date" [(ngModel)]="promotedAdDetails.starting_date" required>
     </div>
 
     <div class="form-group">
