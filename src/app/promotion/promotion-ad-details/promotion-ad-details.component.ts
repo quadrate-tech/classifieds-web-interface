@@ -24,6 +24,7 @@ export class PromotionAdDetailsComponent implements OnInit {
         this.promotedAdDetails = promotedAdDetails;
       });
   }
+
   editPromotion(id) {
     this.router.navigate([`/promotedAd/edit/${id}`]);
   }

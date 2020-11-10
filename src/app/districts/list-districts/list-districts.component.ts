@@ -18,8 +18,10 @@ export class ListDistrictsComponent implements OnInit {
       { district_name: 'Alex', district_id: 2 },
     ];
   }
-  editDistrict(id) {
+
+  editDistrict(id): void {
     this.router.navigate([`/district/edit/${id}`]);
   }
-  deleteDistrict(id) {}
+  deleteDistrict(id): void {}
+
 }

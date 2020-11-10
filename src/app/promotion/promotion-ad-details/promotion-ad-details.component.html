@@ -13,19 +13,19 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of promotedAdDetails">
-      <th scope="row">{{ item.Pa_ad_id }}</th>
-      <td>{{ item.Pa_ad_id }}</td>
+      <td>{{ item.pa_ad_id }}</td>
       <td>{{ item.ad_id }}</td>
       <td>{{ item.promotion_id }}</td>
       <td>{{ item.starting_date }}</td>
       <td>{{ item.status }}</td>
+      <td>{{ item.is_deleted }}</td>
       <td>
         <i
           (click)="promotedAdDetailService.deletePromotedAd(item.Pa_ad_id)"
           class="fa fa-trash danger"
           style="color: red;"
         ></i>
-        <a (click)="editPromotion(item.Pa_ad_id)">
+        <a (click)="editPromotion(item.pa_ad_id)">
           <i class="fa fa-edit primary" style="color: blue;"></i>
         </a>
       </td>
