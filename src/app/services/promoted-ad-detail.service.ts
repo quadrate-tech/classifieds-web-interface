@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {PromotedAdDetails} from '../models/promoted-ad-details.model';
 
@@ -11,9 +11,13 @@ import {PromotedAdDetails} from '../models/promoted-ad-details.model';
 export class PromotedAdDetailService {
   private promotedAdDetails: PromotedAdDetails[] = [];
   private PromotedAdDetailsUpdated = new Subject<PromotedAdDetails[]>();
-  selectedPromotedAdDetails: PromotedAdDetails = new PromotedAdDetails(0, 0, 0, '00/00/0000', false);
+  public selectedPromotedAdDetails: PromotedAdDetails = new PromotedAdDetails(0, 0, 0, '00/00/0000', 'new',false);
 
-  private promotedAdUrl = 'http://localhost:8000/api/promotedAd';
+  private promotedAdUrl = ' https://djangoad.herokuapp.com/api/promoted_ad_detail/';
+  private header = {headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization' : 'Basic ' + btoa('qts-admin:QTSSuperUser')
+  })};
 
   constructor(private http: HttpClient,
               private router: Router) { }
@@ -24,10 +28,12 @@ export class PromotedAdDetailService {
 
 
   public getPromotedAd(): PromotedAdDetails[] {
-    this.http.get(this.promotedAdUrl).subscribe(
+    this.http.get(this.promotedAdUrl, this.header ).subscribe(
       res => {
+        console.log(res);
         this.promotedAdDetails = res as PromotedAdDetails[];
         this.PromotedAdDetailsUpdated.next([...this.promotedAdDetails]);
+        console.log(this.promotedAdDetails);
       },
       err => console.log(err)
     );
@@ -55,13 +61,20 @@ export class PromotedAdDetailService {
     );
   }
 
-  public selected(_id): void {
-    this.selectedPromotedAdDetails = this.promotedAdDetails.find(_id);
+
+  public selected(id): void {
+    this.http.get(this.promotedAdUrl + id + '/', this.header).subscribe(
+      res => {
+        console.log(res);
+        this.selectedPromotedAdDetails = res;
+      },
+      err => console.log(err)
+    );
   }
 
   public updatePromotedAd(promotedAdDetails: PromotedAdDetails): void {
     console.log(promotedAdDetails);
-    this.http.post<any>(this.promotedAdUrl + promotedAdDetails.Pa_ad_id, promotedAdDetails)
+    this.http.post<any>(this.promotedAdUrl + promotedAdDetails.pa_ad_id, promotedAdDetails)
       .subscribe(
         res => {
           window.alert('project updated successfully');
