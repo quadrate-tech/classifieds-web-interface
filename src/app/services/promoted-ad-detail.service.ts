@@ -52,7 +52,7 @@ export class PromotedAdDetailService {
   }
 
   public deletePromotedAd(_id): void {
-    this.http.delete<any>(this.promotedAdUrl  + _id, ).subscribe(
+    this.http.delete<any>(this.promotedAdUrl  + _id + '/', this.header ).subscribe(
       res => {
         this.getPromotedAd();
         this.router.navigate(['/promotedAd']);
@@ -66,7 +66,7 @@ export class PromotedAdDetailService {
     this.http.get(this.promotedAdUrl + id + '/', this.header).subscribe(
       res => {
         console.log(res);
-        this.selectedPromotedAdDetails = res;
+        this.selectedPromotedAdDetails =  res as PromotedAdDetails;
       },
       err => console.log(err)
     );
@@ -74,7 +74,7 @@ export class PromotedAdDetailService {
 
   public updatePromotedAd(promotedAdDetails: PromotedAdDetails): void {
     console.log(promotedAdDetails);
-    this.http.post<any>(this.promotedAdUrl + promotedAdDetails.pa_ad_id, promotedAdDetails)
+    this.http.put<any>(this.promotedAdUrl + promotedAdDetails.pa_ad_id + '/', promotedAdDetails, this.header)
       .subscribe(
         res => {
           window.alert('project updated successfully');

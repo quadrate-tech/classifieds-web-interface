@@ -9,7 +9,7 @@ import {PromotedAdDetailService} from '../../services/promoted-ad-detail.service
   styleUrls: ['./promotion-ad-details-edit.component.css']
 })
 export class PromotionAdDetailsEditComponent implements OnInit {
-  public promotedAdDetails: PromotedAdDetails = new PromotedAdDetails( 0, 0, 0, '12/05/2020', '' , false);
+  public promotedAdDetails: PromotedAdDetails;
   public type = 'Add';
 
   constructor(private promotedAdDetailService: PromotedAdDetailService,
@@ -19,9 +19,13 @@ export class PromotionAdDetailsEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       if ( Number(params.get('id') ) != null) {
-        this.promotedAdDetailService.selected(Number(params.get('id')));
+        this.promotedAdDetailService.selected(params.get('id'));
         this.promotedAdDetails = this.promotedAdDetailService.selectedPromotedAdDetails;
         this.type = 'Edit';
+        this.type = 'Edit';
+        console.log(this.promotedAdDetails);
+      }else {
+        this.promotedAdDetails = new PromotedAdDetails( 0, 0, 0, '12/05/2020', '' , false);
       }
     });
   }
