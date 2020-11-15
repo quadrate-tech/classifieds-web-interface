@@ -19,10 +19,10 @@ export class EditPromotionComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
+      console.log(params.get('id'));
       if ( Number(params.get('id') ) != null) {
         this.promotionService.selected(params.get('id'));
         this.promotion = this.promotionService.selectedPromotion;
-        this.type = 'Edit';
         this.type = 'Edit';
         console.log(this.promotion);
       }else {

@@ -63,10 +63,10 @@ export class PromotionService {
 
 
   public selected(id): void {
-    this.http.get(this.promotionUrl + id + '/', this.header).subscribe(
+    this.http.get(this.promotionUrl + id + '/', this.header).toPromise().then(
       res => {
-        console.log(res);
         this.selectedPromotion =  res as Promotion;
+        console.log(this.selectedPromotion);
       },
       err => console.log(err)
     );
