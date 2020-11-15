@@ -21,10 +21,14 @@ export class EditPromotionComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       console.log(params.get('id'));
       if ( Number(params.get('id') ) != null) {
-        this.promotionService.selected(params.get('id'));
+        this.promotionService.selected(params.get('id')).subscribe(
+          res => {
+            this.promotion =  res as Promotion;
+          },
+          err => console.log(err)
+        );
         this.promotion = this.promotionService.selectedPromotion;
         this.type = 'Edit';
-        console.log(this.promotion);
       }else {
         this.promotion = new Promotion( 0, '', 0, 0, true );
       }
@@ -36,8 +40,11 @@ export class EditPromotionComponent implements OnInit {
       this.promotionService.addPromotion(this.promotion);
       this.router.navigate(['/promotion/add']);
     } else {
+      console.log(this.promotion);
       this.promotionService.updatePromotion(this.promotion);
       this.router.navigate(['/promotion/list']);
     }
   }
+
+
 }

@@ -62,14 +62,8 @@ export class PromotionService {
   }
 
 
-  public selected(id): void {
-    this.http.get(this.promotionUrl + id + '/', this.header).toPromise().then(
-      res => {
-        this.selectedPromotion =  res as Promotion;
-        console.log(this.selectedPromotion);
-      },
-      err => console.log(err)
-    );
+  public selected(id){
+    return this.http.get(this.promotionUrl + id + '/', this.header);
   }
 
   public updatePromotion(promotion: Promotion): void {
