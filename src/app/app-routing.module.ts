@@ -6,7 +6,6 @@ import { EditPaymentComponent } from './payments/edit-payment/edit-payment.compo
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { CreateAdComponent } from './ad/create-ad/create-ad.component';
 import { ListAdComponent } from './ad/list-ad/list-ad.component';
-import { AddPromotionComponent } from './promotion/add-promotion/add-promotion.component';
 import { ListPromotionComponent } from './promotion/list-promotion/list-promotion.component';
 import { EditPromotionComponent } from './promotion/edit-promotion/edit-promotion.component';
 import { PromotionAdDetailsEditComponent } from './promotion/promotion-ad-details-edit/promotion-ad-details-edit.component';
@@ -56,7 +55,7 @@ const routes: Routes = [
   { component: AddPaymentComponent, path: 'payment/add' },
   { component: ListPaymentComponent, path: 'payment/list' },
   { component: EditPaymentComponent, path: 'payment/edit/:id' },
-  { component: AddPromotionComponent, path: 'promotion/add' },
+  { component: EditPaymentComponent, path: 'promotion/add' },
   { component: ListPromotionComponent, path: 'promotion/list' },
   { component: EditPromotionComponent, path: 'promotion/edit/:id' },
   { component: PromotionAdDetailsComponent, path: 'promotedAd' },

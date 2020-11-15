@@ -3,29 +3,29 @@
 <div class="container">
   <div class="font-weight-bold h5 p-5">{{type}} Promotion</div>
 
-  <form #form="ngForm" ngng >
+  <form >
     <div class="form-group">
       <label for="promotion_id">promotion_id</label>
-       <input id="promotion_id" type="number" class="form-control"  name="promotion_id" [ngModel]="this.promotion.promotion_id" >
+       <input  type="number" class="form-control" id="promotion_id" name="promotion_id" [(ngModel)]="promotion.promotion_id" required>
     </div>
     <div class="form-group">
-      <label for="promotion_name">promotion_name </label>
-     <input id="promotion_name" type="text" class="form-control" name="promotion_name" [ngModel]="this.promotion.promotion_name" >
+      <label >promotion_name </label>
+     <input type="text" class="form-control"   name="promotion_name" [(ngModel)]="promotion.promotion_name" required>
     </div>
 
     <div class="form-group">
       <label for="promotion_cost">promotion_cost </label>
-      <input id="promotion_cost" type="number" class="form-control" name="promotion_cost" [ngModel]="this.promotion.promotion_cost" >
+      <input type="number" class="form-control" id="promotion_cost" name="promotion_cost" [(ngModel)]="promotion.promotion_cost" required>
     </div>
 
     <div class="form-group">
       <label for="duration">duration </label>
-      <input id="duration" type="time" class="form-control" name="duration" >
+      <input type="duration" class="form-control" id="duration" name="duration" [(ngModel)]="promotion.duration" required>
     </div>
 
     <div class="form-group">
-      <label for="promotion_status">Status</label>
-      <input id="promotion_status" type="checkbox" name="promotion_status" ><br>
+      <label for="is_deleted">Status</label>
+      <input type="text" id="is_deleted" class="form-control"  name="is_deleted" [(ngModel)]="promotion.is_deleted" required><br>
     </div>
 
 

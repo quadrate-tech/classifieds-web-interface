@@ -28,7 +28,6 @@ export class ListPromotionComponent implements OnInit {
 
   }
   editPromotion(id) {
-    this.promotionService.selected(id);
     this.router.navigate([`/promotion/edit/${id}`]);
   }
   // deletePromotion(item) {
