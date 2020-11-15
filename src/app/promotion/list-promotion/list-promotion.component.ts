@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PromotionService } from '../promotion.service';
+import {PromotionService} from '../../services/promotion.service';
+import { Promotion } from '../../models/promotion';
 
 @Component({
   selector: 'app-list-promotion',
@@ -8,6 +9,8 @@ import { PromotionService } from '../promotion.service';
   styleUrls: ['./list-promotion.component.css'],
 })
 export class ListPromotionComponent implements OnInit {
+  promotions: Promotion[];
+
   constructor(
     private promotionService: PromotionService,
     private router: Router
@@ -15,15 +18,21 @@ export class ListPromotionComponent implements OnInit {
   promotionList: any = [];
 
   ngOnInit(): void {
-    this.promotionService.getList().subscribe((result) => {
-      this.promotionList = result;
+    // this.promotionService.getPromotion().subscribe((result) => {
+    //   this.promotionList = result;;
+    this.promotions = this.promotionService.getPromotion();
+    console.log(this.promotions);
+    this.promotionService.getPromotionUpdateListner().subscribe((promotions: Promotion[]) => {
+      this.promotions = promotions;
     });
+
   }
   editPromotion(id) {
+    this.promotionService.selected(id);
     this.router.navigate([`/promotion/edit/${id}`]);
   }
-  deletePromotion(item) {
-    this.promotionList.splice(item - 1, 1);
-    this.promotionService.deletePromotion(item).subscribe((result) => {});
-  }
+  // deletePromotion(item) {
+  //   this.promotionList.splice(item - 1, 1);
+  //   this.promotionService.deletePromotion(item).subscribe((result) => {});
+  // }
 }

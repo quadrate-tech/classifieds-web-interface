@@ -11,20 +11,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of promotionList">
-      <th scope="row">{{ item.id }}</th>
-      <td>{{ item.promotion_id }}</td>
+    <tr *ngFor="let item of promotions">
+      <th scope="row">{{ item.promotion_id }}</th>
       <td>{{ item.promotion_name }}</td>
       <td>{{ item.promotion_cost }}</td>
       <td>{{ item.duration }}</td>
-      <td>{{ item.promotion_status }}</td>
+      <td>{{ item.is_deleted }}</td>
       <td>
         <i
-          (click)="deletePromotion(item.id)"
+          (click)="promotionService.deletePromotion(item.promotion_id)"
           class="fa fa-trash danger"
           style="color: red;"
         ></i>
-        <a (click)="editPromotion(item.id)">
+        <a (click)="editPromotion(item.promotion_id)">
           <i class="fa fa-edit primary" style="color: blue;"></i>
         </a>
       </td>
