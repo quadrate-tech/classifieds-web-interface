@@ -1,30 +1,37 @@
-<h2>Edit Payment</h2>
-<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Success!</strong> Your Data Successfully Updated.
-  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+
+
+<div class="container">
+  <div class="font-weight-bold h5 p-5">{{type}} Promotion</div>
+
+  <form #form="ngForm" ngng >
+    <div class="form-group">
+      <label for="promotion_id">promotion_id</label>
+       <input id="promotion_id" type="number" class="form-control"  name="promotion_id" [ngModel]="this.promotion.promotion_id" >
+    </div>
+    <div class="form-group">
+      <label for="promotion_name">promotion_name </label>
+     <input id="promotion_name" type="text" class="form-control" name="promotion_name" [ngModel]="this.promotion.promotion_name" >
+    </div>
+
+    <div class="form-group">
+      <label for="promotion_cost">promotion_cost </label>
+      <input id="promotion_cost" type="number" class="form-control" name="promotion_cost" [ngModel]="this.promotion.promotion_cost" >
+    </div>
+
+    <div class="form-group">
+      <label for="duration">duration </label>
+      <input id="duration" type="time" class="form-control" name="duration" >
+    </div>
+
+    <div class="form-group">
+      <label for="promotion_status">Status</label>
+      <input id="promotion_status" type="checkbox" name="promotion_status" ><br>
+    </div>
+
+
+    <div class="form-group">
+      <button class="form-group btn btn-success" type="submit" (click)="onAdd()">{{type}} Promotion </button>
+      <a class="btn btn-danger form-group ml-3" routerLink="/promotion/list" >Cancel</a>
+    </div>
+  </form>
 </div>
-
-<form [formGroup] ="editPromotion" (ngSubmit)="savePromotion()">
-
-  <label for="promotion_id">Promotion Id</label>
-  <input id="promotion_id" type="text" class="form-control" formControlName="promotion_id" placeholder="Promotion ID">
-
-  <label for="promotion_name">Promotion Name</label>
-  <input id="promotion_name" type="text" class="form-control" formControlName="promotion_name" placeholder="Promotion Name">
-
-  <label for="promotion_cost">Promotion Cost</label>
-  <input id="promotion_cost" type="number" formControlName="promotion_cost" class="form-control">
-
-  <label for="duration">Promotion Duration</label>
-  <input id="duration" type="time" class="form-control" formControlName="duration" placeholder="Promotion Duration">
-
-  <label for="promotion_status">Promotion Status</label><br>
-  <input id="promotion_status" type="checkbox" formControlName="promotion_status"><br>
-
-  <button type="submit" class="btn btn-primary col-6">Submit</button>
-  <button type="reset" class="btn btn-danger col-6">Cancel</button>
-  <br>
-
-</form>
