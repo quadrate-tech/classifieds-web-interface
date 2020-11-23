@@ -20,7 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
-import { AddAdTypeComponent } from './add-ad-type/add-ad-type.component';
+//import { AddAdTypeComponent } from './add-ad-type/add-ad-type.component';
 import { EditAdTypeComponent } from './edit-ad-type/edit-ad-type.component';
 import { ListAdTypeComponent } from './list-ad-type/list-ad-type.component';
 import { ListAdAdminComponent } from './list-ad-admin/list-ad-admin.component';
@@ -29,7 +29,7 @@ import { ListAdAdminComponent } from './list-ad-admin/list-ad-admin.component';
     CreateAdComponent,
     EditAdComponent,
     ListAdComponent,
-    AddAdTypeComponent,
+   // AddAdTypeComponent,
     EditAdTypeComponent,
     ListAdTypeComponent,
     ListAdAdminComponent,
@@ -58,7 +58,7 @@ import { ListAdAdminComponent } from './list-ad-admin/list-ad-admin.component';
     CreateAdComponent,
     EditAdComponent,
     ListAdComponent,
-    AddAdTypeComponent,
+   // AddAdTypeComponent,
     EditAdTypeComponent,
     ListAdTypeComponent,
     ListAdAdminComponent,
