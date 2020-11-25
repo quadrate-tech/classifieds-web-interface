@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PaymentService {
-  url="http://localhost:3000/payments"
+   url = 'http://127.0.0.1:8000/api/payment';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
   getList()
   {
     return this.http.get(this.url);

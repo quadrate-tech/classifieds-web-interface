@@ -16,7 +16,7 @@ export class ListPaymentComponent implements OnInit {
       {id: 1, promoted_ad_id: 1, payment_date: '2020-10-10' , paid_amount: 2300, payment_time: 12.23, payment_status: true},
       {id: 2, promoted_ad_id: 2, payment_date: '2020-10-14' , paid_amount: 1340, payment_time: 1.20, payment_status: true},
       {id: 3, promoted_ad_id: 3, payment_date: '2020-10-15' , paid_amount: 3700, payment_time: 7.30, payment_status: true},
-      {id: 4, promoted_ad_id: 3, payment_date: '2020-10-18' , paid_amount: 2000, payment_time: 11.00, payment_status: true},
+      {id: 4, promoted_ad_id: 3, payment_date: '2020-10-18' , paid_amount: 2000, payment_time: 12.23, payment_status: true},
     ];
   }
   editPayment(id) {
