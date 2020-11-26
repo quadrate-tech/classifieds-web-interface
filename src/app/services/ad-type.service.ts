@@ -11,8 +11,8 @@ import {AdType} from '../models/ad-Type';
 
 export class AdTypeService {
 
-  private promotion: AdType[] = [];
-  private promotionUpdated = new Subject<AdType[]>();
+  private adtype : AdType[] = [];
+  //private promotionUpdated = new Subject<AdType[]>();
   types = [
     { id: 1, name: 'job' },
     { id: 2, name: 'rent' },
