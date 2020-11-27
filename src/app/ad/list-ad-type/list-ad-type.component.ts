@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdType } from 'src/app/models/ad-type';
-
+import {AdTypeService} from '../../services/ad-type.service';
 @Component({
   selector: 'app-list-ad-type',
   templateUrl: './list-ad-type.component.html',
@@ -10,17 +10,20 @@ import { AdType } from 'src/app/models/ad-type';
 export class ListAdTypeComponent implements OnInit {
   adTypes: AdType[];
 
-  constructor(private router: Router) {}
-
+  constructor(
+    private adTypeService : AdTypeService,
+    private router: Router
+  ) {}
+  adTypeList : any=[];
   ngOnInit(): void {
-    this.adTypes = [
-      { id: 1, name: 'rent' },
-      { id: 2, name: 'sale' },
-      { id: 3, name: 'job' },
-    ];
+    this.adTypes = this.adTypeService.getAdTypes();
+    console.log(this.adTypes);
+    this.adTypeService.getAdTypeUpdateListner().subscribe((adTypes: AdType[]) => {
+      this.adTypes = adTypes;
+    });
+
   }
-  editType(id) {
+  editPromotion(id) {
     this.router.navigate([`/adType/edit/${id}`]);
   }
-  deleteType(id) {}
 }

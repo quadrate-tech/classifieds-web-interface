@@ -13,11 +13,11 @@
       <td>{{ item.name }}</td>
       <td>
         <i
-          (click)="deleteType(item.id)"
+          (click)="adTypeService.deleteAdType(item.id)"
           class="fa fa-trash danger"
           style="color: red;"
         ></i>
-        <a (click)="editType(item.id)">
+        <a (click)="adTypeService.editAdType(item.id)">
           <i class="fa fa-edit primary" style="color: blue;"></i>
         </a>
       </td>
