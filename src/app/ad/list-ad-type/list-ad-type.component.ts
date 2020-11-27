@@ -23,7 +23,7 @@ export class ListAdTypeComponent implements OnInit {
     });
 
   }
-  editPromotion(id) {
+  editadType(id) {
     this.router.navigate([`/adType/edit/${id}`]);
   }
 }
