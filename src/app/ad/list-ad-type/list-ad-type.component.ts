@@ -16,7 +16,7 @@ export class ListAdTypeComponent implements OnInit {
   ) {}
   adTypeList : any=[];
   ngOnInit(): void {
-    this.adTypes = this.adTypeService.getAdTypes();
+    this.adTypes = this.adTypeService.getAdType();
     console.log(this.adTypes);
     this.adTypeService.getAdTypeUpdateListner().subscribe((adTypes: AdType[]) => {
       this.adTypes = adTypes;

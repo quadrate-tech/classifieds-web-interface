@@ -11,25 +11,73 @@ import {AdType} from '../models/ad-Type';
 
 export class AdTypeService {
 
-  private adtype : AdType[] = [];
-  //private promotionUpdated = new Subject<AdType[]>();
-  types = [
-    { id: 1, name: 'job' },
-    { id: 2, name: 'rent' },
-    { id: 3, name: 'sale' },
-  ];
-  adType: number;
-  constructor() {
-    this.adType = this.types[0].id;
+  private adType: AdType[] = [];
+  private adTypeUpdated = new Subject<AdType[]>();
+  public selectedAdType : AdType= new AdType(0,'')
+  private adTypeUrl = ' https://djangoad.herokuapp.com/api/ad_type/';
+  private header = {headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization' : 'Basic ' + btoa('qts-admin:QTSSuperUser')
+  })};
+
+  constructor(private http: HttpClient,
+              private router: Router) { }
+             
+  public getAdTypeUpdateListner(): Observable<AdType[]> {      
+    return this.adTypeUpdated .asObservable();   
   }
-  setAdType(adType) {
-    this.adType = adType;
+  public getAdType(): AdType[] {
+    this.http.get(this.adTypeUrl, this.header ).subscribe(    
+      res => {
+        console.log(res);
+        this.adType = res as AdType[][];
+        this.adTypeUpdated.next([...this.adType]);
+        console.log(this.adType);
+      },
+      err => console.log(err)
+    );
+    return [...this.adType];
   }
-  getAdType() {
-    return this.adType;
+  public addAdType(adType:AdType): void {
+    this.adType.push(adType);
+    this.http.post<any>(this.adTypeUrl, adType, {
+      headers: {'Content-Type': 'application/json'}
+    }).subscribe(
+      res => window.alert('project added successfully!'),
+      err => console.log(err)
+    );
+    this.adTypeUpdated.next([...this.adType]);
   }
-  getTypes() {
-    //set types array from api
-    return this.types;
+
+
+  public deleteAdType(_id): void {
+    this.http.delete<any>(this.adTypeUrl + _id + '/', this.header ).subscribe(
+      res => {
+        this.getAdType();
+        this.router.navigate(['/adType']);
+      },
+      err => console.log(err)
+    );
+  }
+
+
+
+  public selected(id){
+    return this.http.get(this.adTypeUrl + id + '/', this.header);
+  }
+
+  public updateAdType(adType: AdType): void {
+    console.log(adType);
+    this.http.put<any>(this.adTypeUrl + adType.id + '/', adType, this.header)
+      .subscribe(
+        res => {
+          window.alert('project updated successfully');
+          this.getAdType();
+        },
+        err => console.log(err)
+      );
   }
 }
+
+
+ 

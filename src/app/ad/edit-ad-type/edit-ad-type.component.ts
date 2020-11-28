@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdType } from 'src/app/models/ad-type';
 import {AdTypeService} from '../../services/ad-type.service';
 @Component({
@@ -38,11 +38,11 @@ export class EditAdTypeComponent implements OnInit {
 
  onAdd(): void {
   if (this.type === 'Add') {
-    this.adTypeService.addPromotion(this.adType);
+    this.adTypeService.addAdType(this.adType);
     this.router.navigate(['/adType/add']);
   } else {
     console.log(this.adType);
-    this.adTypeService.updatePromotion(this.adType);
+    this.adTypeService.updateAdType(this.adType);
     this.router.navigate(['/adType/list']);
 
   }}}
