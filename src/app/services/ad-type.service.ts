@@ -30,7 +30,7 @@ export class AdTypeService {
     this.http.get(this.adTypeUrl, this.header ).subscribe(    
       res => {
         console.log(res);
-        this.adType = res as AdType[][];
+        this.adType = res as AdType[];
         this.adTypeUpdated.next([...this.adType]);
         console.log(this.adType);
       },
