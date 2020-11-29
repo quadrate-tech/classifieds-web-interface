@@ -1,4 +1,4 @@
-export class AdType {
+export class AdType{
  public id: number;
   public name: string;
 

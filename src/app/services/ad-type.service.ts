@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
+import { AdType } from '../models/ad-type';
 
-import {AdType} from '../models/ad-Type';
+//import {AdType} from '../models/ad-Type';
 @Injectable({
   providedIn: 'root',
 })

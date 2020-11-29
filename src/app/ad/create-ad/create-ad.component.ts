@@ -35,7 +35,7 @@ export class CreateAdComponent implements OnInit {
     subCategory: new FormControl('', Validators.required),
   });
   ngOnInit(): void {
-    this.types = this.AdTypeService.getTypes();
+    this.types = this.AdTypeService.getAdType();
     this.cities = this.CityService.getCities();
     this.subCategories = this.SubCategoryService.getSubCategories();
     let inputFile = document.getElementById('customFile');

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdType } from 'src/app/models/ad-type';
+//import { AdType } from 'src/app/models/ad-type';
 import {AdTypeService} from '../../services/ad-type.service';
 @Component({
   selector: 'app-list-ad-type',

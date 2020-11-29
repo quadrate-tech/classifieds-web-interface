@@ -36,7 +36,7 @@ export class EditAdComponent implements OnInit {
   });
   ngOnInit(): void {
     this.ad_id = this.activeRouter.snapshot.params['id'];
-    this.types = this.AdTypeService.getTypes();
+    this.types = this.AdTypeService.getAdType();   
     this.cities = this.CityService.getCities();
     this.subCategories = this.SubCategoryService.getSubCategories();
     let inputFile = document.getElementById('customFile');
