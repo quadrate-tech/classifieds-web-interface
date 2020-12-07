@@ -52,10 +52,12 @@ export class AdTypeService {
 
 
   public deleteAdType(_id): void {
+    window.alert('project deleted successfully');
     this.http.delete<any>(this.adTypeUrl + _id + '/', this.header ).subscribe(
       res => {
         this.getAdType();
         this.router.navigate(['/adType']);
+
       },
       err => console.log(err)
     );
@@ -69,7 +71,7 @@ export class AdTypeService {
 
   public updateAdType(adType: AdType): void {
     console.log(adType);
-    this.http.put<any>(this.adTypeUrl + adType.id + '/', adType, this.header)
+    this.http.put<any>(this.adTypeUrl + adType.adType_id + '/', adType, this.header)
       .subscribe(
         res => {
           window.alert('project updated successfully');

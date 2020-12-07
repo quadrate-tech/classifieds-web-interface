@@ -9,15 +9,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of adTypes">
-      <th scope="row">{{ item.id }}</th>
+      <th scope="row">{{ item.adType_id}}</th>
       <td>{{ item.name }}</td>
       <td>
         <i
-          (click)="adTypeService.deleteAdType(item.id)"
+          (click)="adTypeService.deleteAdType(item.adType_id)"
           class="fa fa-trash danger"
           style="color: red;"
         ></i>
-        <a (click)="adTypeService.editAdType(item.id)">
+        <a (click)="editAdType(item.adType_id)">
           <i class="fa fa-edit primary" style="color: blue;"></i>
         </a>
       </td>

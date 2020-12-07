@@ -1,9 +1,9 @@
 export class AdType{
- public id: number;
+ public adType_id: number;
   public name: string;
 
   constructor( id: number, name: string) {
-    this.id = id;
+    this.adType_id = id;
     this.name = name;
  
   }
